@@ -4,7 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PalBus — Live Bus Booking & Reservation Portal</title>
+  <title>PalBuses — India's No. 1 Bus, Train & Hotel Booking Site</title>
+  <meta name="description"
+    content="Book bus tickets, IRCTC train seats & verified luxury hotels across India on PalBuses. Instant e-Tickets, 24/7 Support & 100% Data Privacy.">
+  <meta name="theme-color" content="#d84e55">
+
+  <!-- OpenGraph Social Sharing Tags -->
+  <meta property="og:title" content="PalBuses — Online Bus, Train & Hotel Tickets">
+  <meta property="og:description"
+    content="Instant seat selection, 3,500+ verified RTCs, IRCTC trains & 50,000+ luxury hotels at best prices.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PalBuses India">
+
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d84e55'><rect x='3' y='6' width='18' height='13' rx='2'/><circle cx='8' cy='19' r='1.5'/><circle cx='16' cy='19' r='1.5'/></svg>">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1018,17 +1032,1738 @@
     .hidden {
       display: none !important;
     }
+
+    /* ==========================================================================
+       SIDEBAR, REGIONAL ADDRESSES & USER PRIVACY STYLING
+       ========================================================================== */
+
+    .booking-layout-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .about-layout-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .booking-main-col {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .booking-side-col,
+    .about-side-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: sticky;
+      top: 90px;
+    }
+
+    .side-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .side-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: rgba(216, 78, 85, 0.3);
+    }
+
+    .privacy-side-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fffbfb 100%);
+      border-top: 4px solid var(--primary);
+    }
+
+    .address-side-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-top: 4px solid #2563eb;
+    }
+
+    .helpline-side-card {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border: 1px solid #334155;
+    }
+
+    .side-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .side-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .privacy-icon {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .address-icon {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .helpline-icon {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    .side-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .helpline-side-card .side-card-title {
+      color: #ffffff;
+    }
+
+    .side-card-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      display: block;
+    }
+
+    .helpline-num {
+      font-size: 14px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      background: #ecfdf5;
+      color: #047857;
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-top: 3px;
+      border: 1px solid #a7f3d0;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    .side-card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .privacy-highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .privacy-highlights li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .privacy-bullet {
+      font-size: 14px;
+      line-height: 1;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .privacy-highlights strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .privacy-highlights p {
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .side-address-tabs {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      scrollbar-width: thin;
+    }
+
+    .side-addr-chip {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 14px;
+      background: #f1f5f9;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .side-addr-chip.active,
+    .side-addr-chip:hover {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+
+    .side-address-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      font-size: 12px;
+    }
+
+    .side-address-box h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .side-address-box p {
+      color: var(--muted);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .side-address-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--text);
+      font-weight: 500;
+      background: #f8fafc;
+      padding: 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    .side-address-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .side-card-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .full-width {
+      width: 100% !important;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .btn.ghost:hover {
+      background: #f1f5f9;
+      color: var(--text);
+    }
+
+    .floating-side-bar {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 1000;
+    }
+
+    .floating-side-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--secondary);
+      color: #ffffff;
+      padding: 10px 14px;
+      border-top-left-radius: 24px;
+      border-bottom-left-radius: 24px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-right: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform: translateX(calc(100% - 42px));
+    }
+
+    .floating-side-btn:hover {
+      transform: translateX(0);
+      background: var(--primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .floating-side-btn .icon {
+      font-size: 16px;
+    }
+
+    .floating-side-btn.privacy-btn {
+      background: #0f172a;
+    }
+
+    .floating-side-btn.address-btn {
+      background: #1e3a8a;
+    }
+
+    .privacy-modal-body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .privacy-section-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .privacy-section-box h4 {
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .address-search-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .address-search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(216, 78, 85, 0.1);
+    }
+
+    .address-modal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .address-card-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .address-card-item:hover {
+      border-color: #2563eb;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 992px) {
+
+      .booking-layout-wrapper,
+      .about-layout-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-side-col,
+      .about-side-col {
+        position: static;
+      }
+
+      .floating-side-bar {
+        display: none;
+      }
+    }
+
+
+    /* ==========================================================================
+       LOGIN, SIGNUP, GOOGLE OAUTH & USER SESSION STYLING
+       ========================================================================== */
+
+    .auth-btn-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .auth-btn-nav:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .user-profile-menu {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .user-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      padding: 4px 12px 4px 6px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .user-pill:hover {
+      background: #e2e8f0;
+    }
+
+    .user-avatar-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .user-dropdown-card {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      width: 240px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: 8px 0;
+      z-index: 2500;
+    }
+
+    .user-dropdown-header {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+    }
+
+    .user-dropdown-header div:first-child {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .user-dropdown-header div:last-child {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .user-dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: var(--text);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .user-dropdown-item:hover {
+      background: #f8fafc;
+    }
+
+    .user-dropdown-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 4px 0;
+    }
+
+    .auth-tab-bar {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    .auth-tab-btn {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .auth-tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .auth-method-selector {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .auth-method-chip {
+      flex: 1;
+      padding: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+      background: #f1f5f9;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .auth-method-chip.active {
+      background: #ffffff;
+      color: var(--primary);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-google {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 12px;
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      color: #3c4043;
+      cursor: pointer;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-google:hover {
+      background-color: #f8f9fa;
+      box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
+    }
+
+    .divider-text {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin: 16px 0;
+    }
+
+    .divider-text::before,
+    .divider-text::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .divider-text span {
+      padding: 0 10px;
+    }
+
+    .otp-inputs {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin: 16px 0;
+    }
+
+    .otp-field {
+      width: 44px;
+      height: 48px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      outline: none;
+    }
+
+    .otp-field:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(216, 78, 85, 0.15);
+    }
+
+    .password-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .password-wrapper input {
+      width: 100%;
+      padding-right: 40px;
+    }
+
+    .toggle-pass-btn {
+      position: absolute;
+      right: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .welcome-first-badge {
+      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+      border: 1px solid rgba(216, 78, 85, 0.3);
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      color: var(--primary-dark);
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+
+    /* ==========================================================================
+       PALBUSES BRANDING & MODERN DESIGN SYSTEM
+       ========================================================================== */
+    :root {
+      --primary: #d84e55;
+      --primary-dark: #b8232a;
+      --primary-light: #fdeded;
+      --secondary: #101f36;
+      --accent: #f59e0b;
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --text: #1d2939;
+      --muted: #667085;
+      --border: #eaecf0;
+      --success: #12b76a;
+      --success-bg: #ecfdf3;
+      --danger: #f04438;
+      --shadow-sm: 0 1px 3px rgba(16, 24, 40, 0.08);
+      --shadow-md: 0 4px 16px rgba(16, 24, 40, 0.08);
+      --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* PalBuses Header styling */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-logo span.red-text {
+      color: var(--primary);
+    }
+
+    .brand-logo span.bus-text {
+      color: var(--secondary);
+    }
+
+    .brand-badge {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(216, 78, 85, 0.2);
+    }
+
+    /* PalBuses Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #d84e55 0%, #b8232a 50%, #90161c 100%);
+      color: #ffffff;
+      padding: 48px 20px 80px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-banner h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-banner p {
+      font-size: 16px;
+      opacity: 0.92;
+      margin-bottom: 24px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-pills {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-pill {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .hero-pill:hover {
+      background: #ffffff;
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    /* Search Box PalBuses Floating Layout */
+    .search-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      margin-top: -50px;
+    }
+
+    .search-box {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .search-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      padding: 12px 24px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(216, 78, 85, 0.25);
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 6px 16px rgba(216, 78, 85, 0.35);
+      transform: translateY(-1px);
+    }
+
+    /* Offers Section Styling */
+    .offers-section {
+      margin: 28px 0;
+    }
+
+    .offers-section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .offer-card {
+      background: linear-gradient(135deg, #ffffff 0%, #fff7f7 100%);
+      border: 1px dashed rgba(216, 78, 85, 0.4);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .offer-card:hover {
+      border-style: solid;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .offer-badge {
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 10px;
+      align-self: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .offer-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .offer-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .offer-code-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .btn-copy-code {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-copy-code:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+
+    /* ==========================================================================
+       PALBUSES SCREENSHOT MATCHING STYLES
+       ========================================================================== */
+
+    /* Top App Announcement Bar */
+    .palbuses-top-app-bar {
+      background: #fde8e8;
+      border-bottom: 1px solid #fecdcd;
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #991b1b;
+    }
+
+    .palbuses-top-app-bar .code-tag {
+      background: #ffffff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px dashed var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-install-app {
+      background: #ffffff;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-left: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-install-app:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .close-top-banner {
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: #991b1b;
+      cursor: pointer;
+    }
+
+    /* PalBuses Header matching screenshot */
+    .logo-red {
+      color: #d84e55;
+      font-weight: 800;
+    }
+
+    .logo-bus {
+      color: #101f36;
+      font-weight: 800;
+    }
+
+    .nav-services-tabs {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .service-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 6px 16px;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .service-tab.active,
+    .service-tab:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .service-tab .tab-icon {
+      font-size: 18px;
+    }
+
+    .nav-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-link-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .nav-link-btn:hover {
+      color: var(--primary);
+    }
+
+    /* Capsule Floating Search Box matching screenshot */
+    .palbuses-capsule-search {
+      margin-top: -60px;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      background: #ffffff;
+    }
+
+    .search-fields-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr 1.2fr 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      .search-fields-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .quick-date-pills {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .date-pill {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .date-pill:hover,
+    .date-pill.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Booking for Women Toggle matching screenshot */
+    .women-booking-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff5f5;
+      border: 1px solid #ffe4e6;
+      padding: 10px 14px;
+      border-radius: 14px;
+    }
+
+    .women-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    /* Toggle Switch */
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .3s;
+    }
+
+    .slider.round {
+      border-radius: 24px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+    }
+
+    input:checked+.slider {
+      background-color: var(--primary);
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(20px);
+    }
+
+    .search-btn-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .palbuses-search-pill-btn {
+      background: #d84e55;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 14px 48px;
+      border-radius: 30px;
+      border: none;
+      box-shadow: 0 6px 20px rgba(216, 78, 85, 0.35);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .palbuses-search-pill-btn:hover {
+      background: #b8232a;
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px rgba(216, 78, 85, 0.45);
+    }
+
+    /* PalRail Festival Train Section matching screenshot */
+    .redrail-festival-card {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border: 1px solid #fef08a;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    .redrail-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .redrail-badge-icon {
+      width: 44px;
+      height: 44px;
+      background: #1e1b4b;
+      color: #ffffff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .redrail-offer-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .redrail-offer-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .redrail-promo-tag {
+      font-size: 14px;
+      color: #854d0e;
+    }
+
+    .redrail-promo-tag .promo-code {
+      background: #fef08a;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 800;
+      color: #713f12;
+      border: 1px dashed #ca8a04;
+    }
+
+    .festival-tabs {
+      display: flex;
+      gap: 10px;
+    }
+
+    .festival-chip {
+      background: #ffffff;
+      border: 1px solid #eab308;
+      border-radius: 12px;
+      padding: 8px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .festival-chip.active,
+    .festival-chip:hover {
+      background: #facc15;
+      border-color: #ca8a04;
+
+    }
+
+    .festival-chip .month {
+      font-size: 11px;
+      font-weight: 700;
+      color: #713f12;
+      text-transform: uppercase;
+    }
+
+    .festival-chip .name {
+      font-size: 12px;
+      font-weight: 800;
+      color: #1c1917;
+    }
+
+    .btn-redrail-now {
+      background: #ffe4e6;
+      color: #9f1239;
+      font-weight: 800;
+      border: 1px solid #fecdd3;
+      padding: 10px 24px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-redrail-now:hover {
+      background: #f43f5e;
+      color: #ffffff;
+    }
+
+    /* ==========================================================================
+       HERO BANNER & SEARCH CAPSULE PERFECT SPACING & LAYOUT STYLING
+       ========================================================================== */
+
+    .hero-banner {
+      background: linear-gradient(135deg, #d84e55 0%, #b8232a 50%, #90161c 100%);
+      color: #ffffff;
+      padding: 48px 20px 105px 20px;
+      /* Generous bottom padding to clear hero pills */
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-banner h1 {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-banner p {
+      font-size: 16px;
+      opacity: 0.92;
+      margin-bottom: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-pills {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 14px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-pill {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-pill:hover {
+      background: #ffffff;
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Floating Capsule Search Box */
+    .palbuses-capsule-search {
+      margin-top: -65px;
+      border-radius: 24px;
+      padding: 28px 32px;
+      box-shadow: 0 16px 40px rgba(16, 24, 40, 0.12);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      position: relative;
+      z-index: 20;
+    }
+
+    .search-fields-row {
+      display: grid;
+      grid-template-columns: 1fr 44px 1fr 1.1fr 220px;
+      gap: 16px;
+      align-items: flex-end;
+    }
+
+    .swap-btn {
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      border-radius: 50%;
+      width: 44px;
+      height: 48px;
+      /* Baseline match with input height */
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+      margin-bottom: 0;
+      align-self: flex-end;
+    }
+
+    .swap-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      transform: rotate(180deg);
+    }
+
+    input,
+    select {
+      height: 48px;
+      /* Fixed standard input height */
+      box-sizing: border-box;
+    }
+
+    .quick-date-pills {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .date-pill {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 3px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .date-pill:hover,
+    .date-pill.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Women Booking Toggle Box */
+    .women-booking-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #fff5f5;
+      border: 1.5px solid #ffe4e6;
+      padding: 0 16px;
+      border-radius: 14px;
+      height: 48px;
+      align-self: flex-end;
+      white-space: nowrap;
+      min-width: 210px;
+    }
+
+    .women-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1px;
+      white-space: nowrap;
+    }
+
+    .women-info span {
+      font-size: 13px;
+      font-weight: 700;
+      color: #9f1239;
+      white-space: nowrap;
+    }
+
+    .search-btn-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .redbus-search-pill-btn {
+      background: #d84e55;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 14px 54px;
+      border-radius: 30px;
+      border: none;
+      box-shadow: 0 8px 25px rgba(216, 78, 85, 0.35);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .redbus-search-pill-btn:hover {
+      background: #b8232a;
+      transform: scale(1.03);
+      box-shadow: 0 10px 28px rgba(216, 78, 85, 0.45);
+    }
+
+    @media (max-width: 1100px) {
+      .search-fields-row {
+        grid-template-columns: 1fr 44px 1fr 1fr;
+      }
+
+      .women-booking-toggle {
+        grid-column: 1 / -1;
+        justify-content: space-between;
+        margin-top: 8px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .search-fields-row {
+        grid-template-columns: 1fr;
+      }
+
+      .swap-btn {
+        transform: rotate(90deg);
+        margin: 4px auto !important;
+        align-self: center;
+      }
+    }
+
+
+    /* ==========================================================================
+       PALBUSES HOTELS ENGINE STYLING
+       ========================================================================== */
+
+    .hotel-search-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .hotel-search-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr auto;
+      gap: 14px;
+      align-items: flex-end;
+    }
+
+    @media (max-width: 1024px) {
+      .hotel-search-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hotel-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: 220px 1fr auto;
+      gap: 20px;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .hotel-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hotel-card:hover {
+      border-color: rgba(216, 78, 85, 0.4);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .hotel-img-placeholder {
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      gap: 6px;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hotel-info-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .hotel-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .star-rating {
+      color: #f59e0b;
+      font-size: 14px;
+    }
+
+    .hotel-location {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .hotel-amenities {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .hotel-amenity-chip {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .hotel-price-action {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      text-align: right;
+      border-left: 1px dashed var(--border);
+      padding-left: 20px;
+      min-width: 160px;
+    }
+
+    @media (max-width: 860px) {
+      .hotel-price-action {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px dashed var(--border);
+        padding-top: 14px;
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+
+    .hotel-price-tag {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .hotel-price-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hotel-discount-badge {
+      background: #ecfdf5;
+      color: #047857;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      border: 1px solid #a7f3d0;
+      margin-bottom: 4px;
+    }
+
+    /* Print Media Optimization for e-Tickets */
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+
+      #ticketSection,
+      #ticketSection * {
+        visibility: visible !important;
+      }
+
+      #ticketSection {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      .floating-side-bar,
+      header,
+      footer,
+      .redbus-top-app-bar {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- TOP PALBUSES APP PROMO BANNER (MATCHING SCREENSHOT) -->
+  <div class="palbuses-top-app-bar" id="topAppBanner">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span style="font-size:16px;">📲</span>
+      <span><b>Get 10% Discount</b> | Use code <b class="code-tag">APP10</b> on PalBuses app</span>
+      <button type="button" class="btn-install-app"
+        onclick="showToast('📲 Download PalBuses App for Android & iOS to claim 10% cashback!', '✨')">Install PalBuses
+        App</button>
+    </div>
+    <button type="button" class="close-top-banner"
+      onclick="document.getElementById('topAppBanner').style.display='none'">✕</button>
+  </div>
 
   <header>
     <div class="header-container">
-      <a href="#" class="brand">
+      <a href="#" class="brand" onclick="showTab('book')">
         <div class="brand-logo">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="6" width="18" height="13" rx="2" />
             <path d="M7 19v2" />
             <path d="M17 19v2" />
@@ -1036,52 +2771,84 @@
             <path d="M8 15h.01" />
             <path d="M16 15h.01" />
           </svg>
-          PalBus
+          <span style="color:#d84e55; font-weight:800;">Pal</span><span
+            style="color:#101f36; font-weight:800;">Buses</span>
         </div>
-        <span class="brand-badge">India's #1 Bus Portal</span>
+        <span class="brand-badge">India's #1 Site</span>
       </a>
-      <nav>
-        <button data-tab="book" class="active">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          </svg>
-          Book Tickets
+
+      <div class="nav-services-tabs">
+        <button type="button" data-tab="book" class="service-tab active">
+          <span class="tab-icon">🚌</span>
+          <span>Bus tickets</span>
         </button>
-        <button data-tab="mytickets">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
-          </svg>
-          My Bookings
+        <button type="button" class="service-tab" onclick="openTrainTicketsSection()">
+          <span class="tab-icon">🚆</span>
+          <span>Train tickets</span>
         </button>
-        <button data-tab="about">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 16v-4" />
-            <path d="M12 8h.01" />
-          </svg>
-          About & Contact
+        <button type="button" class="service-tab" onclick="showTab('hotels')">
+          <span class="tab-icon">🏨</span>
+          <span>Hotels</span>
         </button>
-        <button data-tab="admin">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <line x1="9" y1="3" x2="9" y2="21" />
-          </svg>
-          Admin Panel
+      </div>
+
+      <div class="nav-right-actions">
+        <button type="button" class="nav-link-btn" onclick="showTab('mytickets')">
+          <span class="icon">📋</span>
+          <span>Bookings</span>
         </button>
-      </nav>
+        <button type="button" class="nav-link-btn" onclick="openPrivacyModal()">
+          <span class="icon">❓</span>
+          <span>Help</span>
+        </button>
+
+        <button type="button" id="headerAuthBtn" onclick="openAuthModal('login')" class="auth-btn-nav">
+          <span class="icon">👤</span>
+          <span>Account</span>
+        </button>
+
+        <div class="user-profile-menu hidden" id="headerUserProfileMenu">
+          <div class="user-pill" onclick="toggleUserDropdown()">
+            <div class="user-avatar-circle" id="headerUserAvatar">SK</div>
+            <span id="headerUserName">Sumit</span>
+            <span style="font-size:10px; color:var(--muted);">▼</span>
+          </div>
+
+          <div class="user-dropdown-card hidden" id="userDropdownCard">
+            <div class="user-dropdown-header">
+              <div id="dropdownFullname">Sumit Kumar</div>
+              <div id="dropdownUserPhone">+91 98765 43210</div>
+            </div>
+            <div class="user-dropdown-item" onclick="showTab('mytickets'); toggleUserDropdown();">
+              🎟️ My Bookings & Tickets
+            </div>
+            <div class="user-dropdown-item" onclick="openPrivacyModal(); toggleUserDropdown();">
+              🛡️ Privacy & Security Settings
+            </div>
+            <div class="user-dropdown-item" onclick="openAddressModal(); toggleUserDropdown();">
+              🏢 Station Addresses Directory
+            </div>
+            <div class="user-dropdown-divider"></div>
+            <div class="user-dropdown-item" style="color:var(--danger);"
+              onclick="handleUserLogout(); toggleUserDropdown();">
+              🚪 Sign Out
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
   <div class="hero-banner">
-    <h1>PalBus — India's No. 1 Online Bus Ticket Booking Site</h1>
-    <p>Instant seat selection, verified RTCs & private bus partners with 24/7 customer support</p>
+    <h1>PalBuses — India's No. 1 Online Bus Ticket Booking Site</h1>
+    <p>Instant seat selection, 3,500+ verified RTCs & private bus partners with 24/7 customer support</p>
     <div class="hero-pills">
       <span class="hero-pill" style="cursor:pointer;" onclick="clickHeroPill('instant')">⚡ Instant e-Tickets</span>
-      <span class="hero-pill" style="cursor:pointer;" onclick="clickHeroPill('promo')">🏷️ Use Promo: PALBUS10 (10%
+      <span class="hero-pill" style="cursor:pointer;" onclick="clickHeroPill('promo')">🎟️ Use Promo: FIRSTBUS (10%
         OFF)</span>
       <span class="hero-pill" style="cursor:pointer;" onclick="clickHeroPill('cancellation')">🛡️ Free Cancellation
         Policy</span>
+      <span class="hero-pill" style="cursor:pointer;" onclick="openPrivacyModal()">🔒 PalBuses Safety Plus</span>
     </div>
   </div>
 
@@ -1089,13 +2856,100 @@
 
     <!-- BOOKING TAB -->
     <section id="tab-book">
-      <div class="card search-card">
-        <div class="search-box">
-          <div class="input-group">
-            <label>From</label>
-            <div class="input-wrapper">
-              <span class="input-icon">🚌</span>
-              <input id="searchFrom" list="cityList" value="Kanpur" placeholder="Enter Origin City">
+      <div class="booking-layout-wrapper">
+        <!-- Main Search & Booking Column -->
+        <div class="booking-main-col">
+
+          <div class="card search-card palbuses-capsule-search">
+            <div class="search-fields-row">
+              <div class="input-group">
+                <label>From</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">🚍</span>
+                  <input id="searchFrom" list="cityList" value="Kanpur" placeholder="Enter Origin City">
+                </div>
+              </div>
+
+              <button type="button" class="swap-btn" id="btnSwap" title="Swap Cities" onclick="swapCities()">⇄</button>
+
+              <div class="input-group">
+                <label>To</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">🚍</span>
+                  <input id="searchTo" list="cityList" value="Jaipur" placeholder="Enter Destination City">
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label>Date of Journey</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">📅</span>
+                  <input id="searchDate" type="date">
+                </div>
+                <div class="quick-date-pills">
+                  <button type="button" class="date-pill" onclick="setQuickDate('today')">Today</button>
+                  <button type="button" class="date-pill" onclick="setQuickDate('tomorrow')">Tomorrow</button>
+                </div>
+              </div>
+
+              <!-- Women Booking Toggle (Matching Screenshot) -->
+              <div class="women-booking-toggle">
+                <div class="women-info">
+                  <span>👩‍🦰 <b>Booking for women</b></span>
+                  <a href="#"
+                    onclick="showToast('👩‍🦰 Women Safety: Reserves seats next to female co-passengers.', 'ℹ️'); return false;"
+                    style="font-size:11px; color:var(--primary);">Know more</a>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="womenBookingCheckbox" onchange="toggleWomenBooking(this.checked)">
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="search-btn-container">
+              <button type="button" class="btn palbuses-search-pill-btn" id="btnSearch">
+                🔍 Search buses
+              </button>
+            </div>
+          </div>
+
+          <!-- REDRAIL FESTIVAL TRAIN TICKET SECTION (MATCHING SCREENSHOT) -->
+          <div class="card redrail-festival-card" id="redrailFestivalSec">
+            <div class="redrail-header">
+              <div class="redrail-badge-icon">🚆</div>
+              <div>
+                <h3 style="font-size:18px; color:var(--text);">Book trains for festivals</h3>
+                <p style="color:var(--muted); font-size:13px;">Book now to get confirmed ticket with zero cancellation
+                  fee.</p>
+              </div>
+            </div>
+
+            <div class="redrail-offer-row">
+              <div class="redrail-promo-tag">
+                Get <b>₹60 OFF</b> using code <span class="promo-code">SUPERB60</span>
+              </div>
+
+              <div class="festival-tabs">
+                <div class="festival-chip active" id="festChip1" onclick="switchFestivalTab('ganesh')">
+                  <div class="month">Sep</div>
+                  <div class="name">Ganesh Chaturthi</div>
+                </div>
+                <div class="festival-chip" id="festChip2" onclick="switchFestivalTab('dussehra')">
+                  <div class="month">Oct</div>
+                  <div class="name">Dussehra</div>
+                </div>
+                <div class="festival-chip" id="festChip3" onclick="switchFestivalTab('diwali')">
+                  <div class="month">Nov</div>
+                  <div class="name">Diwali Special</div>
+                </div>
+              </div>
+
+              <div style="text-align:right;">
+                <button type="button" class="btn-redrail-now" onclick="openTrainTicketsSection()">Book trains
+                  now</button>
+                <div style="font-size:11px; color:var(--muted); margin-top:4px;">Authorised IRCTC partner</div>
+              </div>
             </div>
           </div>
 
@@ -1160,6 +3014,63 @@
             <option value="depart-asc">Departure: Earliest</option>
             <option value="rating-desc">Rating: High to Low</option>
           </select>
+        </div>
+      </div>
+
+
+      <!-- PALBUSES TRENDING OFFERS & PROMOS -->
+      <div class="offers-section">
+        <div class="offers-section-title">
+          🎟️ Trending Offers & Promo Discounts
+        </div>
+        <div class="offers-grid">
+          <div class="offer-card">
+            <div>
+              <span class="offer-badge">10% OFF</span>
+              <div class="offer-title">Save up to ₹150 on First Booking</div>
+              <div class="offer-desc">Valid for first-time PalBuses & PalBuses ticket reservations.</div>
+            </div>
+            <div class="offer-code-bar">
+              <span>Code: FIRSTBUS</span>
+              <button class="btn-copy-code" onclick="applyPromoCodeDirect('FIRSTBUS')">Apply Code</button>
+            </div>
+          </div>
+
+          <div class="offer-card">
+            <div>
+              <span class="offer-badge">FLAT ₹100 OFF</span>
+              <div class="offer-title">PalBuses Exclusive Deals</div>
+              <div class="offer-desc">Applicable on all A/C Sleeper & Volvo Multi-Axle routes.</div>
+            </div>
+            <div class="offer-code-bar">
+              <span>Code: PALDEAL</span>
+              <button class="btn-copy-code" onclick="applyPromoCodeDirect('PALDEAL')">Apply Code</button>
+            </div>
+          </div>
+
+          <div class="offer-card">
+            <div>
+              <span class="offer-badge">100% REFUND</span>
+              <div class="offer-title">Free Cancellation Guarantee</div>
+              <div class="offer-desc">Cancel anytime up to 4 hours before departure with zero fee.</div>
+            </div>
+            <div class="offer-code-bar">
+              <span>Code: FREECANCEL</span>
+              <button class="btn-copy-code" onclick="applyPromoCodeDirect('FREECANCEL')">Apply Code</button>
+            </div>
+          </div>
+
+          <div class="offer-card">
+            <div>
+              <span class="offer-badge">15% OFF</span>
+              <div class="offer-title">PalBuses Primo Top-Rated Buses</div>
+              <div class="offer-desc">Enjoy extra comfort, punctual departures & clean buses.</div>
+            </div>
+            <div class="offer-code-bar">
+              <span>Code: PRIMO15</span>
+              <button class="btn-copy-code" onclick="applyPromoCodeDirect('PRIMO15')">Apply Code</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1264,6 +3175,206 @@
 
       <!-- Ticket Confirmation Section -->
       <div class="card hidden" id="ticketSection"></div>
+
+      </div>
+
+      <!-- Side Panel Column (User Privacy & Station Addresses) -->
+      <aside class="booking-side-col">
+
+        <!-- SIDE CARD 1: USER PRIVACY & SECURITY GUARANTEE -->
+        <div class="side-card privacy-side-card">
+          <div class="side-card-header">
+            <div class="side-card-icon privacy-icon">🛡️</div>
+            <div>
+              <h4 class="side-card-title">User Privacy & Security Shield</h4>
+              <span class="trust-badge"><span class="pulse-dot"></span> 256-Bit SSL Encrypted</span>
+            </div>
+          </div>
+          <p class="side-card-desc">Your personal details are 100% safe & confidential with PalBuses Privacy
+            Architecture.</p>
+
+          <ul class="privacy-highlights">
+            <li>
+              <span class="privacy-bullet">🔒</span>
+              <div>
+                <strong>Zero Telemarketing Spam</strong>
+                <p>Mobile number & email are strictly used for e-Ticket SMS/WhatsApp alerts.</p>
+              </div>
+            </li>
+            <li>
+              <span class="privacy-bullet">🛡️</span>
+              <div>
+                <strong>Encrypted Manifest</strong>
+                <p>Passenger info is anonymized & shared only with verified bus operators.</p>
+              </div>
+            </li>
+            <li>
+              <span class="privacy-bullet">📜</span>
+              <div>
+                <strong>DPDP & GDPR Compliant</strong>
+                <p>Full user rights to inspect, download, or erase stored booking data.</p>
+              </div>
+            </li>
+            <li>
+              <span class="privacy-bullet">💳</span>
+              <div>
+                <strong>Vaulted PCI Payments</strong>
+                <p>Zero credit card numbers or banking passwords saved on server.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-card-actions">
+            <button class="btn secondary small full-width" onclick="openPrivacyModal()">
+              📜 Read Full Privacy Policy & Rights
+            </button>
+            <button class="btn ghost small full-width" onclick="openDataErasureModal()">
+              🔒 Request Data Erasure / Opt-Out
+            </button>
+          </div>
+        </div>
+
+        <!-- SIDE CARD 2: MORE ADDRESSES & REGIONAL BUS HUBS -->
+        <div class="side-card address-side-card">
+          <div class="side-card-header">
+            <div class="side-card-icon address-icon">🏢</div>
+            <div>
+              <h4 class="side-card-title">Station Addresses & Regional Hubs</h4>
+              <span class="side-card-subtitle">Verified Bus Terminal Counters</span>
+            </div>
+          </div>
+
+          <!-- City Tab Chips -->
+          <div class="side-address-tabs" id="sideAddressTabs">
+            <button class="side-addr-chip active" onclick="switchSideAddress('kanpur')">Kanpur HQ</button>
+            <button class="side-addr-chip" onclick="switchSideAddress('delhi')">Delhi NCR</button>
+            <button class="side-addr-chip" onclick="switchSideAddress('jaipur')">Jaipur</button>
+            <button class="side-addr-chip" onclick="switchSideAddress('lucknow')">Lucknow</button>
+            <button class="side-addr-chip" onclick="switchSideAddress('agra')">Agra</button>
+          </div>
+
+          <!-- Dynamic Address Display -->
+          <div class="side-address-content" id="sideAddressContent"></div>
+
+          <div class="side-card-actions" style="margin-top: 12px;">
+            <button class="btn secondary small full-width" onclick="openAddressModal()">
+              🗺️ View All 6 Regional Office Addresses
+            </button>
+          </div>
+        </div>
+
+        <!-- SIDE CARD 3: 24/7 HELPLINE -->
+        <div class="side-card helpline-side-card">
+          <div class="side-card-header">
+            <div class="side-card-icon helpline-icon">📞</div>
+            <div>
+              <h4 class="side-card-title">24x7 Customer Helpline Desk</h4>
+              <span class="helpline-num">+91 98765 43210</span>
+            </div>
+          </div>
+          <div class="side-card-actions">
+            <a href="tel:+919876543210" class="btn secondary small full-width" style="justify-content:center;">📞 Call
+              Station Counter</a>
+            <button class="btn secondary small full-width" onclick="openWhatsAppSupport()">💬 WhatsApp Support
+              Desk</button>
+          </div>
+        </div>
+
+      </aside>
+      </div>
+
+    </section>
+
+
+    <!-- HOTELS TAB SECTION -->
+    <section id="tab-hotels" class="hidden">
+      <!-- Hotel Search Card -->
+      <div class="card hotel-search-card">
+        <h3 style="margin-bottom:16px; display:flex; align-items:center; gap:8px; font-size:20px;">
+          🏨 Search Verified Hotels & Resorts
+        </h3>
+
+        <div class="hotel-search-grid">
+          <div class="input-group">
+            <label>City or Destination Area</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📍</span>
+              <select id="hotelCitySelect" onchange="filterHotelsByCity(this.value)">
+                <option value="all">All Cities & Locations</option>
+                <option value="Delhi" selected>Delhi NCR (Chanakyapuri, Airport, Paharganj)</option>
+                <option value="Kanpur">Kanpur (Mall Road, Swaroop Nagar)</option>
+                <option value="Jaipur">Jaipur (Bhawani Singh Rd, Pink City)</option>
+                <option value="Lucknow">Lucknow (Hazratganj, Gomti Nagar)</option>
+                <option value="Agra">Agra (Taj Ganj, Near Taj Mahal)</option>
+                <option value="Varanasi">Varanasi (Cantt, Ghats View)</option>
+                <option value="Goa">Goa (Candolim Beach Resort)</option>
+                <option value="Mumbai">Mumbai (Colaba, Marine Drive)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Check-in Date</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📅</span>
+              <input id="hotelCheckIn" type="date">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Check-out Date</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📅</span>
+              <input id="hotelCheckOut" type="date">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Guests & Rooms</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <select id="hotelGuests">
+                <option value="1">1 Guest, 1 Room</option>
+                <option value="2" selected>2 Guests, 1 Room</option>
+                <option value="3">3 Guests, 1 Room</option>
+                <option value="4">4 Guests, 2 Rooms</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <button type="button" class="btn" style="padding:13px 28px;" onclick="searchHotels()">
+              🔍 SEARCH HOTELS
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel Category Filters -->
+      <div class="controls-bar">
+        <div class="filter-group">
+          <span style="font-size:12px; font-weight:700; color:var(--muted); margin-right:4px;">HOTEL CATEGORY:</span>
+          <div class="chip active" id="hotelFilterAll" onclick="filterHotelCategory('all')">All Hotels</div>
+          <div class="chip" id="hotelFilter5star" onclick="filterHotelCategory('5star')">⭐ 5-Star Luxury</div>
+          <div class="chip" id="hotelFilterBudget" onclick="filterHotelCategory('budget')">💰 Budget Friendly (Under
+            ₹2500)</div>
+          <div class="chip" id="hotelFilterStation" onclick="filterHotelCategory('station')">🚉 Near Station / Airport
+          </div>
+          <div class="chip" id="hotelFilterPool" onclick="filterHotelCategory('pool')">🏊 Swimming Pool & Spa</div>
+        </div>
+
+        <div class="sort-wrapper">
+          <label style="margin:0; font-size:12px;">SORT BY:</label>
+          <select id="hotelSortSelect" onchange="sortHotels(this.value)">
+            <option value="rating-desc">Rating: High to Low</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Hotel Results Inventory List -->
+      <div id="hotelResultsList"></div>
     </section>
 
     <!-- MY TICKETS TAB -->
@@ -1282,52 +3393,107 @@
 
     <!-- ABOUT & CONTACT TAB -->
     <section id="tab-about" class="hidden">
-      <div class="profile-card">
-        <div class="profile-header">
-          <div class="profile-avatar" id="aboutAvatar">SK</div>
-          <div>
-            <h2 style="font-size: 24px;" id="aboutName">Sumit Kumar</h2>
-            <p style="color: var(--muted); font-size: 14px; font-weight: 500;" id="aboutRole">Lead Developer & System
-              Administrator</p>
+      <div class="about-layout-wrapper">
+        <!-- Main Column: Developer Profile & Privacy Policy Framework -->
+        <div class="about-main-col">
+
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="profile-avatar" id="aboutAvatar">SK</div>
+              <div>
+                <h2 style="font-size: 24px;" id="aboutName">Sumit Kumar</h2>
+                <p style="color: var(--muted); font-size: 14px; font-weight: 500;" id="aboutRole">Lead Developer &
+                  System
+                  Administrator</p>
+              </div>
+            </div>
+
+            <p style="color: var(--text); line-height: 1.6; font-size: 15px;" id="aboutBio">
+              Welcome to <b>PalBuses Booking Portal</b>! Designed, engineered, and maintained by <b>Sumit Kumar</b>.
+              This portal provides seamless real-time bus ticket reservations, dynamic seat layouts, promo discounts,
+              e-ticket generation, and administration capabilities.
+            </p>
+
+            <div class="info-grid">
+              <div class="info-tile">
+                <label>Full Name</label>
+                <div id="aboutFullName">Sumit Kumar</div>
+              </div>
+              <div class="info-tile">
+                <label>Primary Email</label>
+                <div id="aboutEmail">sumitkumar152005@gmail.com</div>
+              </div>
+              <div class="info-tile">
+                <label>Contact Phone</label>
+                <div id="aboutPhone">+91 98765 43210</div>
+              </div>
+              <div class="info-tile">
+                <label>Headquarters Location</label>
+                <div id="aboutLocation">Kanpur, Uttar Pradesh, India</div>
+              </div>
+            </div>
+
+            <h4 style="margin: 24px 0 12px 0; color: var(--muted); font-size: 12px; text-transform: uppercase;">Connect
+              on
+              Social Platforms</h4>
+            <div class="social-buttons">
+              <a href="https://instagram.com/sumit_editer" target="_blank" class="social-link insta" id="aboutInsta">
+                📷 Instagram (@sumit_editer)
+              </a>
+              <a href="https://facebook.com" target="_blank" class="social-link fb" id="aboutFb">
+                📘 Facebook Profile
+              </a>
+            </div>
+          </div>
+
+          <!-- USER PRIVACY & DATA GOVERNANCE CARD -->
+          <div class="card" style="margin-top: 20px;">
+            <h3 style="display:flex; align-items:center; gap:8px;">🛡️ User Privacy & Data Protection Framework</h3>
+            <p style="color: var(--muted); font-size: 14px; margin: 8px 0 16px 0;">
+              PalBuses values your privacy and enforces strict data confidentiality, 256-bit SSL encryption, and
+              zero-spam compliance across all passenger interactions.
+            </p>
+            <div class="privacy-grid">
+              <div class="info-tile">
+                <label>🔐 Encryption Standard</label>
+                <div style="font-size:13px; font-weight:600;">TLS 1.3 & 256-Bit SSL Data Security</div>
+              </div>
+              <div class="info-tile">
+                <label>⌛ Data Retention Period</label>
+                <div style="font-size:13px; font-weight:600;">180 Days (Auto-purged post trip completion)</div>
+              </div>
+              <div class="info-tile">
+                <label>👁️ Third-Party Data Policy</label>
+                <div style="font-size:13px; font-weight:600;">Strictly limited to assigned RTC/Private Operators</div>
+              </div>
+              <div class="info-tile">
+                <label>👤 Data Protection Officer (DPO)</label>
+                <div style="font-size:13px; font-weight:600;" id="aboutDPO">Sumit Kumar (sumitkumar152005@gmail.com)
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
+              <button class="btn secondary small" onclick="openPrivacyModal()">📜 Read Complete Privacy Policy</button>
+              <button class="btn secondary small" onclick="openDataErasureModal()">🔒 Request Data Erasure /
+                Opt-Out</button>
+            </div>
           </div>
         </div>
 
-        <p style="color: var(--text); line-height: 1.6; font-size: 15px;" id="aboutBio">
-          Welcome to <b>PalBus Booking Portal</b>! Designed, engineered, and maintained by <b>Sumit Kumar</b>.
-          This portal provides seamless real-time bus ticket reservations, dynamic seat layouts, promo discounts,
-          e-ticket generation, and administration capabilities.
-        </p>
+        <!-- Side Column: Corporate Offices & Regional Station Addresses -->
+        <div class="about-side-col">
+          <div class="card">
+            <h3 style="display:flex; align-items:center; gap:8px; font-size:18px;">🏢 Regional Office Directory</h3>
+            <p style="color:var(--muted); font-size:13px; margin-bottom:16px;">Physical booking counters, passenger
+              lounges, and dispatch hubs.</p>
 
-        <div class="info-grid">
-          <div class="info-tile">
-            <label>Full Name</label>
-            <div id="aboutFullName">Sumit Kumar</div>
+            <div id="aboutAddressList">
+              <!-- Dynamically hydrated via renderAboutAddresses() -->
+            </div>
           </div>
-          <div class="info-tile">
-            <label>Primary Email</label>
-            <div id="aboutEmail">sumitkumar152005@gmail.com</div>
-          </div>
-          <div class="info-tile">
-            <label>Contact Phone</label>
-            <div id="aboutPhone">+91 98765 43210</div>
-          </div>
-          <div class="info-tile">
-            <label>Headquarters Location</label>
-            <div id="aboutLocation">Kanpur, Uttar Pradesh, India</div>
-          </div>
-        </div>
-
-        <h4 style="margin: 24px 0 12px 0; color: var(--muted); font-size: 12px; text-transform: uppercase;">Connect on
-          Social Platforms</h4>
-        <div class="social-buttons">
-          <a href="https://instagram.com/sumit_editer" target="_blank" class="social-link insta" id="aboutInsta">
-            📷 Instagram (@sumit_editer)
-          </a>
-          <a href="https://facebook.com" target="_blank" class="social-link fb" id="aboutFb">
-            📘 Facebook Profile
-          </a>
         </div>
       </div>
+
     </section>
 
     <!-- ADMIN TAB -->
@@ -1362,7 +3528,7 @@
             <div
               style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-top:16px;">
               <div class="input-group"><label>Operator Name</label><input id="newOperator"
-                  placeholder="e.g. PalBus Premium" style="padding-left:12px;"></div>
+                  placeholder="e.g. PalBuses Premium" style="padding-left:12px;"></div>
               <div class="input-group"><label>Bus Type</label>
                 <select id="newType" style="padding-left:12px;">
                   <option value="A/C Sleeper (2+1)">A/C Sleeper (2+1)</option>
@@ -1465,7 +3631,7 @@
             <div class="input-group" style="margin-top:16px;">
               <label>Portal Bio / Description</label>
               <textarea id="adminPropBio" rows="3"
-                style="width:100%; padding:12px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:inherit; font-size:14px; outline:none;">Welcome to PalBus Booking Portal! Designed, engineered, and maintained by Sumit Kumar. This portal provides seamless real-time bus ticket reservations, dynamic seat layouts, promo discounts, e-ticket generation, and administration capabilities.</textarea>
+                style="width:100%; padding:12px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:inherit; font-size:14px; outline:none;">Welcome to PalBuses Booking Portal! Designed, engineered, and maintained by Sumit Kumar. This portal provides seamless real-time bus ticket reservations, dynamic seat layouts, promo discounts, e-ticket generation, and administration capabilities.</textarea>
             </div>
 
             <button class="btn" id="btnSaveAdminProfile" style="margin-top:20px;">💾 Save Developer & Portal
@@ -1498,14 +3664,18 @@
   </div>
 
   <!-- INSTANT SMS NOTIFICATION MODAL -->
-  <div id="smsModal" class="hidden" style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.65); backdrop-filter:blur(6px); z-index:3500; display:flex; align-items:center; justify-content:center; padding:20px;">
-    <div class="card" style="max-width:460px; width:100%; box-shadow:var(--shadow-lg); border-radius:20px; padding:24px; background:#ffffff;">
-      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px;">
+  <div id="smsModal" class="hidden"
+    style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.65); backdrop-filter:blur(6px); z-index:3500; display:flex; align-items:center; justify-content:center; padding:20px;">
+    <div class="card"
+      style="max-width:460px; width:100%; box-shadow:var(--shadow-lg); border-radius:20px; padding:24px; background:#ffffff;">
+      <div
+        style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px;">
         <h3 style="display:flex; align-items:center; gap:8px; font-size:18px;">📱 Mobile SMS Ticket Sender</h3>
         <button class="btn secondary small" onclick="closeSMSModal()">✕ Close</button>
       </div>
 
-      <div style="background:#f1f5f9; padding:12px 16px; border-radius:10px; border:1px solid #e2e8f0; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
+      <div
+        style="background:#f1f5f9; padding:12px 16px; border-radius:10px; border:1px solid #e2e8f0; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
         <div>
           <div style="font-size:11px; font-weight:700; color:var(--muted);">PASSENGER PHONE NUMBER</div>
           <div style="font-size:15px; font-weight:800; color:var(--text);" id="smsRecipientPhone">+91 9876543210</div>
@@ -1514,7 +3684,8 @@
       </div>
 
       <div style="background:var(--primary-light); padding:16px; border-radius:12px; border:1px solid #fecdd3;">
-        <div style="display:flex; justify-content:space-between; font-size:11px; font-weight:700; color:var(--primary); margin-bottom:6px;">
+        <div
+          style="display:flex; justify-content:space-between; font-size:11px; font-weight:700; color:var(--primary); margin-bottom:6px;">
           <span>SMS MESSAGE CONTENT</span>
           <span id="smsTimestamp">Just now</span>
         </div>
@@ -1524,15 +3695,19 @@
       </div>
 
       <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
-        <button class="btn" style="width:100%; font-size:14px;" onclick="triggerNativeSMSLaunch()">📱 Launch Phone Messaging App (Send Real SMS)</button>
-        <button class="btn secondary" style="width:100%; font-size:13px;" onclick="shareNativeTicket()">📲 Share Ticket via Device Apps</button>
-        <button class="btn secondary small" style="width:100%; margin-top:4px;" onclick="closeSMSModal()">Done / Close</button>
+        <button class="btn" style="width:100%; font-size:14px;" onclick="triggerNativeSMSLaunch()">📱 Launch Phone
+          Messaging App (Send Real SMS)</button>
+        <button class="btn secondary" style="width:100%; font-size:13px;" onclick="shareNativeTicket()">📲 Share Ticket
+          via Device Apps</button>
+        <button class="btn secondary small" style="width:100%; margin-top:4px;" onclick="closeSMSModal()">Done /
+          Close</button>
       </div>
     </div>
   </div>
 
   <footer>
-    <p>PalBus Portal Engine &copy; Created by <b>Sumit Kumar</b> | Email: sumitkumar152005@gmail.com | Location: Kanpur,
+    <p>PalBuses Portal Engine &copy; Created by <b>Sumit Kumar</b> | Email: sumitkumar152005@gmail.com | Location:
+      Kanpur,
       UP</p>
   </footer>
 
@@ -1568,16 +3743,16 @@
       const dayAfterStr = getFormattedDate(2);
 
       const routeTemplates = [
-        { idPrefix: 'BUS_KNP_JPR', operator: 'PalBus Premium Sleeper', source: 'Kanpur', destination: 'Jaipur', departTime: '20:30', arriveTime: '06:00', totalSeats: 36, price: 750, type: 'A/C Sleeper (2+1)', rating: '4.9', ratingsCount: 420, boardingPoints: ['Fazalganj Square - 20:30', 'Rama Devi Flyover - 21:00'], droppingPoints: ['Sindhi Camp Bus Stand - 06:00', '200 Feet Bypass - 06:30'] },
-        { idPrefix: 'BUS_KNP_DEL', operator: 'PalBus Volvo Multi-Axle', source: 'Kanpur', destination: 'Delhi', departTime: '22:00', arriveTime: '05:30', totalSeats: 36, price: 650, type: 'Volvo A/C Multi-Axle', rating: '4.8', ratingsCount: 680, boardingPoints: ['Chunniganj Bus Stand - 22:00', 'IIT Gate Kanpur - 22:30'], droppingPoints: ['Kashmere Gate ISBT - 05:30', 'Akshardham Metro - 05:00'] },
-        { idPrefix: 'BUS_KNP_LKO', operator: 'PalBus Express EV', source: 'Kanpur', destination: 'Lucknow', departTime: '07:00', arriveTime: '09:15', totalSeats: 40, price: 280, type: 'Electric AC Seater', rating: '4.7', ratingsCount: 890, boardingPoints: ['Jhabarkat Kanpur - 07:00'], droppingPoints: ['Alambagh Bus Terminal - 09:15', 'Charbagh Railway Station - 09:30'] },
+        { idPrefix: 'BUS_KNP_JPR', operator: 'PalBuses Premium Sleeper', source: 'Kanpur', destination: 'Jaipur', departTime: '20:30', arriveTime: '06:00', totalSeats: 36, price: 750, type: 'A/C Sleeper (2+1)', rating: '4.9', ratingsCount: 420, boardingPoints: ['Fazalganj Square - 20:30', 'Rama Devi Flyover - 21:00'], droppingPoints: ['Sindhi Camp Bus Stand - 06:00', '200 Feet Bypass - 06:30'] },
+        { idPrefix: 'BUS_KNP_DEL', operator: 'PalBuses Volvo Multi-Axle', source: 'Kanpur', destination: 'Delhi', departTime: '22:00', arriveTime: '05:30', totalSeats: 36, price: 650, type: 'Volvo A/C Multi-Axle', rating: '4.8', ratingsCount: 680, boardingPoints: ['Chunniganj Bus Stand - 22:00', 'IIT Gate Kanpur - 22:30'], droppingPoints: ['Kashmere Gate ISBT - 05:30', 'Akshardham Metro - 05:00'] },
+        { idPrefix: 'BUS_KNP_LKO', operator: 'PalBuses Express EV', source: 'Kanpur', destination: 'Lucknow', departTime: '07:00', arriveTime: '09:15', totalSeats: 40, price: 280, type: 'Electric AC Seater', rating: '4.7', ratingsCount: 890, boardingPoints: ['Jhabarkat Kanpur - 07:00'], droppingPoints: ['Alambagh Bus Terminal - 09:15', 'Charbagh Railway Station - 09:30'] },
         { idPrefix: 'BUS_KNP_AGR', operator: 'Samay Shatabdi Travels', source: 'Kanpur', destination: 'Agra', departTime: '11:00', arriveTime: '15:30', totalSeats: 36, price: 490, type: 'A/C Sleeper (2+1)', rating: '4.5', ratingsCount: 210, boardingPoints: ['Vijay Nagar Bypass - 11:00'], droppingPoints: ['ISBT Agra - 15:30', 'Water Works Agra - 15:15'] },
-        { idPrefix: 'BUS_KNP_VNS', operator: 'PalBus Gold Seater', source: 'Kanpur', destination: 'Varanasi', departTime: '14:00', arriveTime: '21:00', totalSeats: 36, price: 580, type: 'Non-AC Seater', rating: '4.6', ratingsCount: 245, boardingPoints: ['Naubasta Bye Pass - 14:00'], droppingPoints: ['Varanasi Cantt - 21:00'] },
+        { idPrefix: 'BUS_KNP_VNS', operator: 'PalBuses Gold Seater', source: 'Kanpur', destination: 'Varanasi', departTime: '14:00', arriveTime: '21:00', totalSeats: 36, price: 580, type: 'Non-AC Seater', rating: '4.6', ratingsCount: 245, boardingPoints: ['Naubasta Bye Pass - 14:00'], droppingPoints: ['Varanasi Cantt - 21:00'] },
         { idPrefix: 'BUS_KNP_PRY', operator: 'Vikas Travels AC', source: 'Kanpur', destination: 'Prayagraj', departTime: '08:00', arriveTime: '12:00', totalSeats: 36, price: 320, type: 'Electric AC Seater', rating: '4.4', ratingsCount: 198, boardingPoints: ['Rama Devi Chowk - 08:00'], droppingPoints: ['Civil Lines Prayagraj - 12:00'] }
       ];
 
       let buses = DB.load('btb_buses', null);
-      if (!buses || buses.length === 0 || !buses[0] || !buses[0].boardingPoints || !buses[0].operator.includes('PalBus')) {
+      if (!buses || buses.length === 0 || !buses[0] || !buses[0].boardingPoints || !buses[0].operator.includes('PalBuses')) {
         buses = [];
         [todayStr, tomorrowStr, dayAfterStr].forEach((dateStr, idx) => {
           routeTemplates.forEach(r => {
@@ -2041,7 +4216,7 @@
         passengers,
         contactName: name,
         contactPhone: phone,
-        contactEmail: email || 'passenger@redbus.in',
+        contactEmail: email || 'passenger@palbuses.in',
         boardingPoint: (document.getElementById('boardingPointSelect') && document.getElementById('boardingPointSelect').value) ? document.getElementById('boardingPointSelect').value : (currentSelectedBus ? currentSelectedBus.source : 'Origin'),
         droppingPoint: (document.getElementById('droppingPointSelect') && document.getElementById('droppingPointSelect').value) ? document.getElementById('droppingPointSelect').value : (currentSelectedBus ? currentSelectedBus.destination : 'Destination'),
         fare: finalFare,
@@ -2287,7 +4462,7 @@
       location: 'Kanpur, Uttar Pradesh, India',
       insta: 'https://instagram.com/sumit_editer',
       fb: 'https://facebook.com',
-      bio: 'Welcome to PalBus Booking Portal! Designed, engineered, and maintained by Sumit Kumar. This portal provides seamless real-time bus ticket reservations, dynamic seat layouts, promo discounts, e-ticket generation, and administration capabilities.'
+      bio: 'Welcome to PalBuses Booking Portal! Designed, engineered, and maintained by Sumit Kumar. This portal provides seamless real-time bus ticket reservations, dynamic seat layouts, promo discounts, e-ticket generation, and administration capabilities.'
     };
 
     function getAdminProfile() {
@@ -2311,7 +4486,7 @@
       if (role) role.textContent = p.role;
 
       const bio = document.getElementById('aboutBio');
-      if (bio) bio.innerHTML = p.bio.replace(/Sumit Kumar/g, `<b>${p.name}</b>`).replace(/PalBus Booking Portal/g, `<b>PalBus Booking Portal</b>`);
+      if (bio) bio.innerHTML = p.bio.replace(/Sumit Kumar/g, `<b>${p.name}</b>`).replace(/PalBuses Booking Portal/g, `<b>PalBuses Booking Portal</b>`);
 
       const fn = document.getElementById('aboutFullName');
       if (fn) fn.textContent = p.name;
@@ -2645,11 +4820,11 @@
 
       const phone = booking.contactPhone || '9876543210';
       const name = booking.contactName || 'Passenger';
-      const busName = bus ? bus.operator : 'PalBus Express';
+      const busName = bus ? bus.operator : 'PalBuses Express';
       const route = bus ? `${bus.source} ➔ ${bus.destination}` : 'Route';
       const dateStr = bus ? `${bus.date} (${bus.departTime})` : '';
 
-      const msgText = `Dear ${name}, your PalBus ticket (PNR: ${booking.id}) for ${busName} (${route}) on ${dateStr} for seat(s) ${booking.seats.join(', ')} is CONFIRMED! Total Paid: ₹${booking.fare}. Boarding at ${booking.boardingPoint}. Safe Journey!`;
+      const msgText = `Dear ${name}, your PalBuses ticket (PNR: ${booking.id}) for ${busName} (${route}) on ${dateStr} for seat(s) ${booking.seats.join(', ')} is CONFIRMED! Total Paid: ₹${booking.fare}. Boarding at ${booking.boardingPoint}. Safe Journey!`;
 
       currentSMSData = { phone, msgText };
 
@@ -2681,9 +4856,9 @@
       if (!currentSMSData.msgText) return;
       if (navigator.share) {
         navigator.share({
-          title: 'PalBus e-Ticket Confirmation',
+          title: 'PalBuses e-Ticket Confirmation',
           text: currentSMSData.msgText
-        }).catch(() => {});
+        }).catch(() => { });
       } else {
         navigator.clipboard.writeText(currentSMSData.msgText);
         showToast('📋 Ticket SMS copied to clipboard!', '✅');
@@ -2702,16 +4877,1596 @@
 
       const phone = booking.contactPhone || '9876543210';
       const name = booking.contactName || 'Passenger';
-      const busName = bus ? bus.operator : 'PalBus Express';
+      const busName = bus ? bus.operator : 'PalBuses Express';
       const route = bus ? `${bus.source} ➔ ${bus.destination}` : 'Route';
 
-      const textRaw = `*PalBus Ticket Confirmation*\n*PNR:* ${booking.id}\n*Passenger:* ${name}\n*Bus:* ${busName} (${route})\n*Date:* ${bus ? bus.date : ''} | *Time:* ${bus ? bus.departTime : ''}\n*Seat(s):* ${booking.seats.join(', ')}\n*Boarding:* ${booking.boardingPoint}\n*Fare Paid:* ₹${booking.fare}\n*Status:* CONFIRMED\nHave a pleasant journey with PalBus!`;
+      const textRaw = `*PalBuses Ticket Confirmation*\n*PNR:* ${booking.id}\n*Passenger:* ${name}\n*Bus:* ${busName} (${route})\n*Date:* ${bus ? bus.date : ''} | *Time:* ${bus ? bus.departTime : ''}\n*Seat(s):* ${booking.seats.join(', ')}\n*Boarding:* ${booking.boardingPoint}\n*Fare Paid:* ₹${booking.fare}\n*Status:* CONFIRMED\nHave a pleasant journey with PalBuses!`;
       const waText = encodeURIComponent(textRaw);
 
       showToast(`💬 Opening WhatsApp confirmation for +91 ${phone}...`, '💬');
       window.open(`https://wa.me/91${phone}?text=${waText}`, '_blank');
     }
-  </script>
+
+    /* ==========================================================================
+       MORE ADDRESSES & USER PRIVACY SYSTEM LOGIC
+       ========================================================================== */
+
+    const PALBUS_ADDRESSES = [
+      {
+        id: 'kanpur',
+        city: 'Kanpur',
+        title: 'Kanpur Central Corporate Headquarters & Main Counter',
+        badge: 'Headquarters',
+        address: 'PalBuses Tower, Mall Road, Opp. RBI Building, Parade, Kanpur, Uttar Pradesh - 208001',
+        phone: '+91 98765 43210',
+        email: 'kanpur.hq@palbus.in',
+        hours: '24 Hours / 7 Days Open',
+        manager: 'Sumit Kumar (Central Admin)',
+        mapUrl: 'https://maps.google.com/?q=Kanpur+Central+Station'
+      },
+      {
+        id: 'delhi',
+        city: 'Delhi NCR',
+        title: 'Delhi NCR Terminal & Passenger Desk',
+        badge: 'Major Terminal',
+        address: 'Inter State Bus Terminal (ISBT), Counter No. 14, Anand Vihar, New Delhi - 110092',
+        phone: '+91 11 2215 4321',
+        email: 'delhi.desk@palbus.in',
+        hours: '04:00 AM - 11:30 PM',
+        manager: 'Rajesh Sharma',
+        mapUrl: 'https://maps.google.com/?q=ISBT+Anand+Vihar+Delhi'
+      },
+      {
+        id: 'jaipur',
+        city: 'Jaipur',
+        title: 'Jaipur Pink City Express Terminal',
+        badge: 'Regional Hub',
+        address: 'Platform No. 3, Sindhi Camp Central Bus Station, Station Road, Jaipur, Rajasthan - 302001',
+        phone: '+91 141 237 8900',
+        email: 'jaipur.hub@palbus.in',
+        hours: '05:00 AM - 11:00 PM',
+        manager: 'Vikram Singh',
+        mapUrl: 'https://maps.google.com/?q=Sindhi+Camp+Jaipur'
+      },
+      {
+        id: 'lucknow',
+        city: 'Lucknow',
+        title: 'Lucknow Alambagh Modern Terminal Desk',
+        badge: 'RTC Partner Hub',
+        address: 'Counter 08, Alambagh Bus Terminal, Sector B, Alambagh, Lucknow, Uttar Pradesh - 226005',
+        phone: '+91 522 245 6789',
+        email: 'lucknow.desk@palbus.in',
+        hours: '24 Hours Open',
+        manager: 'Anil Verma',
+        mapUrl: 'https://maps.google.com/?q=Alambagh+Bus+Terminal+Lucknow'
+      },
+      {
+        id: 'agra',
+        city: 'Agra',
+        title: 'Agra Express Highway Booking Office',
+        badge: 'Express Counter',
+        address: 'PalBuses Lounge, ISBT Transport Nagar, National Highway 19, Agra, Uttar Pradesh - 282007',
+        phone: '+91 562 252 1122',
+        email: 'agra.desk@palbus.in',
+        hours: '05:30 AM - 10:30 PM',
+        manager: 'Sunil Yadav',
+        mapUrl: 'https://maps.google.com/?q=ISBT+Transport+Nagar+Agra'
+      },
+      {
+        id: 'varanasi',
+        city: 'Varanasi',
+        title: 'Varanasi Cantt Passenger Service Desk',
+        badge: 'Heritage Desk',
+        address: 'Counter 4, Cantt Bus Station, Opp. Railway Junction, Varanasi, Uttar Pradesh - 221002',
+        phone: '+91 542 222 3344',
+        email: 'varanasi.desk@palbus.in',
+        hours: '06:00 AM - 10:00 PM',
+        manager: 'Pankaj Mishra',
+        mapUrl: 'https://maps.google.com/?q=Varanasi+Cantt+Bus+Station'
+      }
+    ];
+
+    let currentSideAddressId = 'kanpur';
+
+    function initSideAddresses() {
+      renderSideAddress(currentSideAddressId);
+      renderAboutAddresses();
+    }
+
+    function switchSideAddress(id) {
+      currentSideAddressId = id;
+      document.querySelectorAll('#sideAddressTabs .side-addr-chip').forEach(btn => {
+        const isTarget = btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${id}'`);
+        btn.classList.toggle('active', isTarget);
+      });
+      renderSideAddress(id);
+    }
+
+    function renderSideAddress(id) {
+      const item = PALBUS_ADDRESSES.find(a => a.id === id) || PALBUS_ADDRESSES[0];
+      const container = document.getElementById('sideAddressContent');
+      if (!container) return;
+
+      container.innerHTML = `
+        <div class="side-address-box">
+          <h5>
+            <span>${item.title}</span>
+            <span class="trust-badge" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">${item.badge}</span>
+          </h5>
+          <p>📍 ${item.address}</p>
+          <div class="side-address-meta">
+            <div>📞 <b>Phone:</b> <a href="tel:${item.phone.replace(/\s+/g, '')}" style="color:var(--primary);">${item.phone}</a></div>
+            <div>⏰ <b>Counter Hours:</b> ${item.hours}</div>
+            <div>👤 <b>Station Manager:</b> ${item.manager}</div>
+          </div>
+          <div class="side-address-actions">
+            <button class="btn secondary small" style="flex:1; font-size:11px;" onclick="copyAddressToClipboard('${item.address.replace(/'/g, "\\'")}', this)">📍 Copy Address</button>
+            <a href="${item.mapUrl}" target="_blank" class="btn secondary small" style="font-size:11px;">🗺️ Map</a>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderAboutAddresses() {
+      const container = document.getElementById('aboutAddressList');
+      if (!container) return;
+
+      container.innerHTML = PALBUS_ADDRESSES.map(item => `
+        <div class="address-card-item" style="margin-bottom:12px;">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <h5 style="font-size:14px; font-weight:700; color:var(--text);">${item.title}</h5>
+              <span class="trust-badge" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">${item.badge}</span>
+            </div>
+            <p style="font-size:13px; color:var(--muted); margin-bottom:8px;">📍 ${item.address}</p>
+            <div style="font-size:12px; color:var(--text); display:grid; grid-template-columns: 1fr 1fr; gap:6px; background:#f8fafc; padding:8px; border-radius:6px;">
+              <div>📞 <b>Phone:</b> ${item.phone}</div>
+              <div>✉️ <b>Email:</b> ${item.email}</div>
+              <div>⏰ <b>Hours:</b> ${item.hours}</div>
+              <div>👤 <b>In-charge:</b> ${item.manager}</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; margin-top:8px;">
+            <button class="btn secondary small" onclick="copyAddressToClipboard('${item.address.replace(/'/g, "\\'")}', this)">📍 Copy Address</button>
+            <a href="${item.mapUrl}" target="_blank" class="btn secondary small">🗺️ Open in Google Maps</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function copyAddressToClipboard(text, btnElem) {
+      navigator.clipboard.writeText(text).then(() => {
+        if (typeof showToast === 'function') showToast('📍 Address copied to clipboard!', '✅');
+        if (btnElem) {
+          const origText = btnElem.innerText;
+          btnElem.innerText = '✅ Copied!';
+          setTimeout(() => { btnElem.innerText = origText; }, 2000);
+        }
+      }).catch(() => {
+        if (typeof showToast === 'function') showToast('📍 Address: ' + text, 'ℹ️');
+      });
+    }
+
+    function openPrivacyModal() {
+      const modal = document.getElementById('privacyModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closePrivacyModal() {
+      const modal = document.getElementById('privacyModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function openAddressModal() {
+      renderAddressModalGrid(PALBUS_ADDRESSES);
+      const modal = document.getElementById('addressModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeAddressModal() {
+      const modal = document.getElementById('addressModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function filterAddressModal(query) {
+      const q = query.toLowerCase().trim();
+      const filtered = PALBUS_ADDRESSES.filter(a =>
+        a.city.toLowerCase().includes(q) ||
+        a.title.toLowerCase().includes(q) ||
+        a.address.toLowerCase().includes(q)
+      );
+      renderAddressModalGrid(filtered);
+    }
+
+    function renderAddressModalGrid(list) {
+      const container = document.getElementById('addressModalGrid');
+      if (!container) return;
+
+      if (list.length === 0) {
+        container.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:30px; color:var(--muted);">No matching office addresses found.</div>';
+        return;
+      }
+
+      container.innerHTML = list.map(item => `
+        <div class="address-card-item">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <h5 style="font-size:14px; font-weight:700; color:var(--text);">${item.city} Counter</h5>
+              <span class="trust-badge" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">${item.badge}</span>
+            </div>
+            <div style="font-weight:600; font-size:13px; margin-bottom:4px;">${item.title}</div>
+            <p style="font-size:12px; color:var(--muted); line-height:1.4; margin-bottom:8px;">📍 ${item.address}</p>
+            <div style="font-size:11px; background:#f8fafc; padding:8px; border-radius:6px; margin-bottom:8px;">
+              <div>📞 <b>Phone:</b> ${item.phone}</div>
+              <div>✉️ <b>Email:</b> ${item.email}</div>
+              <div>⏰ <b>Working Hours:</b> ${item.hours}</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn secondary small" style="flex:1; font-size:11px;" onclick="copyAddressToClipboard('${item.address.replace(/'/g, "\\'")}', this)">📍 Copy</button>
+            <a href="${item.mapUrl}" target="_blank" class="btn secondary small" style="font-size:11px;">🗺️ Map</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openDataErasureModal() {
+      const modal = document.getElementById('dataErasureModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeDataErasureModal() {
+      const modal = document.getElementById('dataErasureModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function submitDataErasureRequest(e) {
+      if (e) e.preventDefault();
+      const phoneInput = document.getElementById('erasurePhone');
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+
+      if (!phone || phone.length !== 10) {
+        if (typeof showToast === 'function') showToast('Please enter your valid 10-digit mobile number.', '⚠️');
+        return;
+      }
+
+      closeDataErasureModal();
+      if (typeof showToast === 'function') showToast(`🔒 Privacy Erasure Request submitted for ${phone}. Data purge confirmation sent via SMS!`, '✅');
+    }
+
+    function openWhatsAppSupport() {
+      const p = (typeof getAdminProfile === 'function') ? getAdminProfile() : null;
+      const phone = (p && p.phone) ? p.phone.replace(/[^0-9]/g, '') : '919876543210';
+      window.open(`https://wa.me/${phone}?text=Hello%20PalBuses%20Support,%20I%20have%20an%20inquiry%20regarding%20bus%20ticket%20booking%20and%20privacy.`, '_blank');
+    }
+
+    // Initialize side addresses on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      initSideAddresses();
+    });
+
+
+    /* ==========================================================================
+       AUTHENTICATION & USER SESSION MANAGER
+       ========================================================================== */
+
+    let currentAuthTab = 'login';
+    let currentAuthMethod = 'password';
+    let loggedInUser = null;
+
+    function getLoggedInUser() {
+      try {
+        const data = localStorage.getItem('palbus_user_session');
+        return data ? JSON.parse(data) : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function setLoggedInUser(userObj) {
+      if (userObj) {
+        localStorage.setItem('palbus_user_session', JSON.stringify(userObj));
+        loggedInUser = userObj;
+      } else {
+        localStorage.removeItem('palbus_user_session');
+        loggedInUser = null;
+      }
+      updateUserHeaderUI();
+      autoFillPassengerForm();
+    }
+
+    function updateUserHeaderUI() {
+      const user = getLoggedInUser();
+      const authBtn = document.getElementById('headerAuthBtn');
+      const profileMenu = document.getElementById('headerUserProfileMenu');
+
+      if (user) {
+        if (authBtn) authBtn.classList.add('hidden');
+        if (profileMenu) profileMenu.classList.remove('hidden');
+
+        const initials = user.name ? user.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() : 'US';
+        const avatarElem = document.getElementById('headerUserAvatar');
+        if (avatarElem) avatarElem.textContent = initials;
+
+        const nameElem = document.getElementById('headerUserName');
+        if (nameElem) nameElem.textContent = user.name ? user.name.split(' ')[0] : 'User';
+
+        const fullElem = document.getElementById('dropdownFullname');
+        if (fullElem) fullElem.textContent = user.name || 'PalBuses Passenger';
+
+        const phoneElem = document.getElementById('dropdownUserPhone');
+        if (phoneElem) phoneElem.textContent = user.phone ? `+91 ${user.phone}` : (user.email || '');
+
+      } else {
+        if (authBtn) authBtn.classList.remove('hidden');
+        if (profileMenu) profileMenu.classList.add('hidden');
+      }
+    }
+
+    function toggleUserDropdown() {
+      const card = document.getElementById('userDropdownCard');
+      if (card) card.classList.toggle('hidden');
+    }
+
+    function handleUserLogout() {
+      setLoggedInUser(null);
+      showToast('Logged out of PalBuses successfully.', '👋');
+    }
+
+    function checkFirstTimeVisitor() {
+      const hasVisited = localStorage.getItem('palbus_has_visited');
+      const user = getLoggedInUser();
+
+      if (!hasVisited) {
+        localStorage.setItem('palbus_has_visited', 'true');
+        if (!user) {
+          setTimeout(() => {
+            openAuthModal('signup', true);
+          }, 1200);
+        }
+      }
+    }
+
+    function openAuthModal(initialTab = 'login', isFirstVisit = false) {
+      const modal = document.getElementById('authModal');
+      const banner = document.getElementById('authFirstVisitBanner');
+
+      if (banner) {
+        if (isFirstVisit) banner.classList.remove('hidden');
+        else banner.classList.add('hidden');
+      }
+
+      switchAuthTab(initialTab);
+      switchAuthMethod('password');
+
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeAuthModal() {
+      const modal = document.getElementById('authModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function switchAuthTab(tab) {
+      currentAuthTab = tab;
+      const loginBtn = document.getElementById('authTabBtnLogin');
+      const signupBtn = document.getElementById('authTabBtnSignup');
+      const loginForm = document.getElementById('authFormLogin');
+      const signupForm = document.getElementById('authFormSignup');
+
+      if (tab === 'login') {
+        if (loginBtn) loginBtn.classList.add('active');
+        if (signupBtn) signupBtn.classList.remove('active');
+        if (loginForm) loginForm.classList.remove('hidden');
+        if (signupForm) signupForm.classList.add('hidden');
+      } else {
+        if (signupBtn) signupBtn.classList.add('active');
+        if (loginBtn) loginBtn.classList.remove('active');
+        if (signupForm) signupForm.classList.remove('hidden');
+        if (loginForm) loginForm.classList.add('hidden');
+      }
+    }
+
+    function switchAuthMethod(method) {
+      currentAuthMethod = method;
+      const chips = ['password', 'otp', 'google'];
+      chips.forEach(m => {
+        const chip = document.getElementById(`authChip${m.charAt(0).toUpperCase() + m.slice(1)}`);
+        const sec = document.getElementById(`authSec${m.charAt(0).toUpperCase() + m.slice(1)}`);
+        if (chip) chip.classList.toggle('active', m === method);
+        if (sec) sec.classList.toggle('hidden', m !== method);
+      });
+    }
+
+    function togglePasswordVisibility(fieldId) {
+      const input = document.getElementById(fieldId);
+      if (input) {
+        input.type = input.type === 'password' ? 'text' : 'password';
+      }
+    }
+
+    function handlePasswordLogin(e) {
+      if (e) e.preventDefault();
+      const userId = document.getElementById('loginUserId').value.trim();
+      const pass = document.getElementById('loginPassword').value.trim();
+
+      if (!userId || !pass) {
+        showToast('Please enter User ID / Email and Password.', '⚠️');
+        return;
+      }
+
+      const user = {
+        id: 'USR_' + Math.floor(100000 + Math.random() * 900000),
+        name: userId.includes('@') ? userId.split('@')[0] : userId,
+        email: userId.includes('@') ? userId : `${userId}@palbus.in`,
+        phone: '9876543210',
+        method: 'Password'
+      };
+
+      setLoggedInUser(user);
+      closeAuthModal();
+      showToast(`Welcome back, ${user.name}! Logged in successfully.`, '🎉');
+    }
+
+    function handlePasswordSignup(e) {
+      if (e) e.preventDefault();
+      const name = document.getElementById('signupName').value.trim();
+      const email = document.getElementById('signupEmail').value.trim();
+      const phone = document.getElementById('signupPhone').value.trim();
+      const pass = document.getElementById('signupPassword').value.trim();
+
+      if (!name || !email || phone.length !== 10 || pass.length < 6) {
+        showToast('Please fill all fields correctly (10-digit mobile & min. 6 char password).', '⚠️');
+        return;
+      }
+
+      const user = {
+        id: 'USR_' + Math.floor(100000 + Math.random() * 900000),
+        name,
+        email,
+        phone,
+        method: 'Sign Up'
+      };
+
+      setLoggedInUser(user);
+      closeAuthModal();
+      showToast(`Account created successfully! Welcome to PalBuses, ${name}.`, '✨');
+    }
+
+    function sendMobileOTP() {
+      const phone = document.getElementById('otpPhone').value.trim();
+      if (!phone || phone.length !== 10) {
+        showToast('Please enter a valid 10-digit mobile number.', '⚠️');
+        return;
+      }
+
+      document.getElementById('otpSentPhoneDisplay').textContent = `+91 ${phone}`;
+      document.getElementById('otpStep1').classList.add('hidden');
+      document.getElementById('otpStep2').classList.remove('hidden');
+
+      showToast(`OTP SMS sent to +91 ${phone}. Enter generated OTP SMS code`, '📲');
+    }
+
+    function focusNextOTP(elem, idx) {
+      if (elem.value.length === 1 && idx < 4) {
+        const next = document.getElementById(`otp${idx + 1}`);
+        if (next) next.focus();
+      }
+    }
+
+    function verifyMobileOTP() {
+      const otp = [1, 2, 3, 4].map(i => document.getElementById(`otp${i}`).value).join('');
+      const phone = document.getElementById('otpPhone').value.trim() || '9876543210';
+
+      if (otp !== '4829' && otp.length < 4) {
+        showToast('Please enter the 4-digit OTP (Demo Code: 4829).', '⚠️');
+        return;
+      }
+
+      const user = {
+        id: 'USR_' + Math.floor(100000 + Math.random() * 900000),
+        name: `Passenger ${phone.substring(6)}`,
+        email: `user.${phone}@palbus.in`,
+        phone,
+        method: 'Mobile OTP'
+      };
+
+      setLoggedInUser(user);
+      closeAuthModal();
+      showToast(`Mobile OTP Verified! Logged in as +91 ${phone}.`, '✅');
+    }
+
+    function triggerGoogleSignIn() {
+      const modal = document.getElementById('googleOAuthModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeGoogleOAuthModal() {
+      const modal = document.getElementById('googleOAuthModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function confirmGoogleAccount(name, email, phone) {
+      closeGoogleOAuthModal();
+      const user = {
+        id: 'GGL_' + Math.floor(100000 + Math.random() * 900000),
+        name,
+        email,
+        phone,
+        method: 'Google Account'
+      };
+
+      setLoggedInUser(user);
+      closeAuthModal();
+      showToast(`Signed in with Google as ${email}!`, '🌐');
+    }
+
+    function autoFillPassengerForm() {
+      const user = getLoggedInUser();
+      if (!user) return;
+
+      const cName = document.getElementById('contactName');
+      const cPhone = document.getElementById('contactPhone');
+      const cEmail = document.getElementById('contactEmail');
+
+      if (cName && !cName.value) cName.value = user.name || '';
+      if (cPhone && !cPhone.value) cPhone.value = user.phone || '';
+      if (cEmail && !cEmail.value) cEmail.value = user.email || '';
+    }
+
+    // Auto check session & first time visitor on load
+    document.addEventListener('DOMContentLoaded', () => {
+      updateUserHeaderUI();
+      checkFirstTimeVisitor();
+    });
+
+
+    /* GOOGLE AUTHENTICATION HANDLERS */
+    function performDirectGoogleSignIn(e) {
+      if (e) e.preventDefault();
+      const emailElem = document.getElementById('googleDirectEmail');
+      const nameElem = document.getElementById('googleDirectName');
+
+      const email = emailElem ? emailElem.value.trim().toLowerCase() : '';
+      const name = nameElem ? nameElem.value.trim() : '';
+
+      if (!email || !email.includes('@')) {
+        showToast('Please enter your valid Google Email address (e.g. yourname@gmail.com).', '⚠️');
+        if (emailElem) emailElem.focus();
+        return;
+      }
+
+      confirmGoogleAccount(name || email.split('@')[0], email, '9876543210');
+    }
+
+    function triggerGoogleSignIn() {
+      renderGoogleAccountsList();
+      const modal = document.getElementById('googleOAuthModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeGoogleOAuthModal() {
+      const modal = document.getElementById('googleOAuthModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function renderGoogleAccountsList() {
+      const container = document.getElementById('googleAccountsList');
+      if (!container) return;
+
+      const users = typeof getRegisteredUsers === 'function' ? getRegisteredUsers() : [];
+
+      let html = users.map(u => `
+        <div style="display:flex; align-items:center; gap:12px; padding:10px; border:1px solid var(--border); border-radius:10px; cursor:pointer; background:#ffffff; transition:all 0.15s ease;" 
+             onclick="confirmGoogleAccount('${(u.name || u.email).replace(/'/g, "\\'")}', '${u.email}', '${u.phone || '9876543210'}')"
+             onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='#ffffff'">
+          <div style="width:36px; height:36px; border-radius:50%; background:#4285f4; color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px;">
+            ${u.name ? u.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() : 'GO'}
+          </div>
+          <div>
+            <div style="font-size:13px; font-weight:700; color:var(--text);">${u.name || u.email.split('@')[0]}</div>
+            <div style="font-size:12px; color:var(--muted);">${u.email}</div>
+          </div>
+        </div>
+      `).join('');
+
+      container.innerHTML = html;
+    }
+
+    function saveAndLoginRealGoogleAccount() {
+      const emailInput = document.getElementById('googleRealEmail');
+      const nameInput = document.getElementById('googleRealName');
+
+      const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
+      const name = nameInput ? nameInput.value.trim() : '';
+
+      if (!email || !email.includes('@')) {
+        showToast('Please enter your valid Google Email address.', '⚠️');
+        if (emailInput) emailInput.focus();
+        return;
+      }
+
+      confirmGoogleAccount(name || email.split('@')[0], email, '9876543210');
+    }
+
+    function confirmGoogleAccount(name, email, phone) {
+      closeGoogleOAuthModal();
+
+      const user = {
+        id: 'GGL_' + Math.floor(100000 + Math.random() * 900000),
+        name: name || email.split('@')[0],
+        email: email,
+        phone: phone || '9876543210',
+        method: 'Google Account',
+        createdAt: new Date().toISOString()
+      };
+
+      if (typeof setLoggedInUser === 'function') setLoggedInUser(user);
+      if (typeof closeAuthModal === 'function') closeAuthModal();
+      if (typeof showToast === 'function') showToast(`🌐 Logged in with Google Account (${email})!`, '✅');
+    }
+
+
+    /* PROMO CODE QUICK APPLY HELPER */
+    function applyPromoCodeDirect(code) {
+      const input = document.getElementById('promoInput');
+      if (input) {
+        input.value = code;
+        showToast(`🎟️ Promo Code ${code} selected! Click 'Apply' in seat checkout fare panel.`, '✅');
+      } else {
+        showToast(`🎟️ Promo Code ${code} copied! Apply it during seat checkout.`, '✅');
+      }
+    }
+
+
+    /* SCREENSHOT MATCHING JS HELPERS */
+    function setQuickDate(type) {
+      const dateInput = document.getElementById('searchDate');
+      if (!dateInput) return;
+
+      const today = new Date();
+      if (type === 'tomorrow') {
+        today.setDate(today.getDate() + 1);
+      }
+
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+
+      dateInput.value = `${yyyy}-${mm}-${dd}`;
+      showToast(`📅 Date set to ${type === 'today' ? 'Today' : 'Tomorrow'} (${dd}/${mm}/${yyyy})`, '🗓️');
+    }
+
+    function toggleWomenBooking(enabled) {
+      if (enabled) {
+        showToast('👩‍🦰 Booking for Women enabled! Reserving female-preferred seats.', '✅');
+      } else {
+        showToast('Standard seat selection enabled.', 'ℹ️');
+      }
+    }
+
+    function switchFestivalTab(name) {
+      ['ganesh', 'dussehra', 'diwali'].forEach(f => {
+        const chip = document.getElementById(f === 'ganesh' ? 'festChip1' : (f === 'dussehra' ? 'festChip2' : 'festChip3'));
+        if (chip) chip.classList.toggle('active', f === name);
+      });
+      showToast(`🚆 Switched to ${name.toUpperCase()} Festival Train Booking window!`, '🚆');
+    }
+
+    function openTrainTicketsSection() {
+      showToast('🚆 PalRail IRCTC Partner: Searching confirmed train tickets for festivals...', '🚆');
+      setTimeout(() => {
+        alert('🚆 PalRail (IRCTC Authorized Partner)\n\nFestival Special Trains Available:\n1. Kanpur Central -> New Delhi Vande Bharat Express\n2. Lucknow Charbagh -> Jaipur Superfast\n3. Agra Cantt -> Varanasi Junction\n\nUse promo code: SUPERB60 for flat ₹60 discount!');
+      }, 300);
+    }
+
+
+    /* TAB SWITCHING & CITY SWAP GLOBAL HELPERS */
+    function showTab(tabName) {
+      document.querySelectorAll('section[id^="tab-"]').forEach(sec => sec.classList.add('hidden'));
+      const targetSec = document.getElementById(`tab-${tabName}`);
+      if (targetSec) targetSec.classList.remove('hidden');
+
+      document.querySelectorAll('.service-tab, nav button[data-tab]').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tab') === tabName);
+      });
+    }
+
+    function swapCities() {
+      const fromInput = document.getElementById('searchFrom');
+      const toInput = document.getElementById('searchTo');
+      if (fromInput && toInput) {
+        const temp = fromInput.value;
+        fromInput.value = toInput.value;
+        toInput.value = temp;
+        if (typeof showToast === 'function') showToast('⇄ Origin & Destination cities swapped!', '🔄');
+      }
+    }
+
+
+    /* ==========================================================================
+       PALBUSES HOTELS ENGINE DATA & SYSTEM LOGIC
+       ========================================================================== */
+
+    const PALBUSES_HOTELS = [
+      // DELHI HOTELS
+      {
+        id: 'HTL_DEL_01',
+        name: 'The Leela Palace New Delhi',
+        city: 'Delhi',
+        category: '5star',
+        rating: '4.9',
+        reviews: 1840,
+        address: 'Diplomatic Enclave, Chanakyapuri, New Delhi - 110023',
+        price: 8500,
+        origPrice: 10500,
+        discount: '19% OFF',
+        amenities: ['⭐ 5-Star Luxury', '🏊 Swimming Pool', '📶 Free WiFi', '💆 Spa & Wellness', '🚗 Valet Parking'],
+        nearStation: true,
+        hasPool: true,
+        bgIcon: '🏰'
+      },
+      {
+        id: 'HTL_DEL_02',
+        name: 'Radisson Blu Plaza Delhi Airport',
+        city: 'Delhi',
+        category: '5star',
+        rating: '4.7',
+        reviews: 1420,
+        address: 'National Highway 8, Near Indira Gandhi Intl Airport, New Delhi - 110037',
+        price: 4200,
+        origPrice: 5800,
+        discount: '28% OFF',
+        amenities: ['⭐ 4-Star Premium', '✈️ Airport Shuttle', '📶 Free WiFi', '🏋️ Fitness Center', '🍽️ Multi-Cuisine'],
+        nearStation: true,
+        hasPool: true,
+        bgIcon: '🏨'
+      },
+      {
+        id: 'HTL_DEL_03',
+        name: 'Ginger Hotel New Delhi Railway Station',
+        city: 'Delhi',
+        category: 'budget',
+        rating: '4.4',
+        reviews: 980,
+        address: 'Opp. New Delhi Railway Station, Paharganj, New Delhi - 110055',
+        price: 1800,
+        origPrice: 2400,
+        discount: '25% OFF',
+        amenities: ['💰 Budget Friendly', '🚉 Opp. Railway Station', '📶 Free WiFi', '❄️ AC Rooms', '🍳 Free Breakfast'],
+        nearStation: true,
+        hasPool: false,
+        bgIcon: '🏢'
+      },
+
+      // KANPUR HOTELS
+      {
+        id: 'HTL_KNP_01',
+        name: 'The Landmark Hotel Kanpur',
+        city: 'Kanpur',
+        category: '5star',
+        rating: '4.8',
+        reviews: 1250,
+        address: '10/493, Mall Road, Opp. Som Dutt Plaza, Kanpur, UP - 208001',
+        price: 3800,
+        origPrice: 4900,
+        discount: '22% OFF',
+        amenities: ['⭐ 5-Star Luxury', '🏊 Rooftop Pool', '📶 Free WiFi', '🍸 Lounge Bar', '🚗 Free Parking'],
+        nearStation: true,
+        hasPool: true,
+        bgIcon: '🏢'
+      },
+      {
+        id: 'HTL_KNP_02',
+        name: 'Hotel Royal Cliff Kanpur',
+        city: 'Kanpur',
+        category: 'budget',
+        rating: '4.6',
+        reviews: 740,
+        address: '113/58-A, Swaroop Nagar, Opp. Moti Jheel, Kanpur, UP - 208002',
+        price: 2400,
+        origPrice: 3200,
+        discount: '25% OFF',
+        amenities: ['💰 Value for Money', '📶 High Speed WiFi', '❄️ AC Deluxe Rooms', '🍽️ Restaurant'],
+        nearStation: false,
+        hasPool: false,
+        bgIcon: '🏨'
+      },
+
+      // JAIPUR HOTELS
+      {
+        id: 'HTL_JPR_01',
+        name: 'Rambagh Palace Jaipur',
+        city: 'Jaipur',
+        category: '5star',
+        rating: '4.9',
+        reviews: 2100,
+        address: 'Bhawani Singh Road, Near Rambagh Circle, Jaipur, Rajasthan - 302005',
+        price: 9500,
+        origPrice: 12000,
+        discount: '21% OFF',
+        amenities: ['👑 Heritage Palace', '🏊 Royal Gardens & Pool', '📶 Free WiFi', '💆 Luxury Spa'],
+        nearStation: false,
+        hasPool: true,
+        bgIcon: '🏰'
+      },
+      {
+        id: 'HTL_JPR_02',
+        name: 'Hotel Pearl Palace Jaipur',
+        city: 'Jaipur',
+        category: 'budget',
+        rating: '4.6',
+        reviews: 1120,
+        address: '51, Hathroi Fort, Hari Kishan Somani Marg, Ajmer Road, Jaipur - 302001',
+        price: 1900,
+        origPrice: 2600,
+        discount: '27% OFF',
+        amenities: ['💰 Budget Deluxe', '☕ Peacock Rooftop Cafe', '📶 Free WiFi', '🚉 Near Bus Stand'],
+        nearStation: true,
+        hasPool: false,
+        bgIcon: '🏨'
+      },
+
+      // LUCKNOW HOTELS
+      {
+        id: 'HTL_LKO_01',
+        name: 'Taj Mahal Lucknow',
+        city: 'Lucknow',
+        category: '5star',
+        rating: '4.9',
+        reviews: 1680,
+        address: 'Vipin Khand, Gomti Nagar, Lucknow, Uttar Pradesh - 226010',
+        price: 6500,
+        origPrice: 8200,
+        discount: '20% OFF',
+        amenities: ['⭐ 5-Star Luxury', '🏊 Garden Pool', '📶 Free WiFi', '🍽️ Fine Dining'],
+        nearStation: false,
+        hasPool: true,
+        bgIcon: '🏰'
+      },
+
+      // AGRA HOTELS
+      {
+        id: 'HTL_AGR_01',
+        name: 'ITC Mughal Luxury Hotel Agra',
+        city: 'Agra',
+        category: '5star',
+        rating: '4.8',
+        reviews: 1530,
+        address: 'Taj Ganj, Fatehabad Road, Near Taj Mahal, Agra, UP - 282001',
+        price: 5500,
+        origPrice: 7200,
+        discount: '23% OFF',
+        amenities: ['🕌 Taj Mahal View', '🏊 Mughal Spa & Pool', '📶 Free WiFi', '🚗 Free Parking'],
+        nearStation: false,
+        hasPool: true,
+        bgIcon: '🏰'
+      },
+
+      // GOA & MUMBAI HOTELS
+      {
+        id: 'HTL_GOA_01',
+        name: 'Taj Holiday Village Resort Goa',
+        city: 'Goa',
+        category: '5star',
+        rating: '4.9',
+        reviews: 1950,
+        address: 'Sinquerim Beach, Candolim, Bardez, Goa - 403515',
+        price: 7800,
+        origPrice: 9900,
+        discount: '21% OFF',
+        amenities: ['🏖️ Beachfront Resort', '🏊 Infinity Pool', '🍸 Beach Bar', '📶 Free WiFi'],
+        nearStation: false,
+        hasPool: true,
+        bgIcon: '🏖️'
+      },
+      {
+        id: 'HTL_MUM_01',
+        name: 'The Taj Mahal Palace Mumbai',
+        city: 'Mumbai',
+        category: '5star',
+        rating: '4.9',
+        reviews: 3200,
+        address: 'Apollo Bunder, Opp. Gateway of India, Colaba, Mumbai - 400001',
+        price: 11000,
+        origPrice: 14500,
+        discount: '24% OFF',
+        amenities: ['👑 Iconic Landmark', '🏊 Sea View Pool', '📶 Free WiFi', '🍽️ 9 Fine Dining Outlets'],
+        nearStation: true,
+        hasPool: true,
+        bgIcon: '🏰'
+      }
+    ];
+
+    let currentSelectedHotelCity = 'Delhi';
+    let currentSelectedHotelCategory = 'all';
+    let activeBookingHotel = null;
+
+    function initHotelsEngine() {
+      // Set default checkin & checkout dates
+      const inInput = document.getElementById('hotelCheckIn');
+      const outInput = document.getElementById('hotelCheckOut');
+
+      const today = new Date();
+      const tomorrow = new Date();
+      tomorrow.setDate(today.getDate() + 1);
+
+      if (inInput) inInput.value = today.toISOString().split('T')[0];
+      if (outInput) outInput.value = tomorrow.toISOString().split('T')[0];
+
+      renderHotels();
+    }
+
+    function filterHotelsByCity(city) {
+      currentSelectedHotelCity = city;
+      renderHotels();
+    }
+
+    function filterHotelCategory(cat) {
+      currentSelectedHotelCategory = cat;
+      ['all', '5star', 'budget', 'station', 'pool'].forEach(c => {
+        const chip = document.getElementById(`hotelFilter${c.charAt(0).toUpperCase() + c.slice(1)}`);
+        if (chip) chip.classList.toggle('active', c === cat);
+      });
+      renderHotels();
+    }
+
+    function searchHotels() {
+      const city = document.getElementById('hotelCitySelect') ? document.getElementById('hotelCitySelect').value : 'all';
+      currentSelectedHotelCity = city;
+      renderHotels();
+      showToast(`🏨 Searched verified hotels in ${city === 'all' ? 'All Locations' : city}!`, '🔎');
+    }
+
+    function sortHotels(criteria) {
+      renderHotels(criteria);
+    }
+
+    function renderHotels(sortCriteria = 'rating-desc') {
+      const container = document.getElementById('hotelResultsList');
+      if (!container) return;
+
+      let list = [...PALBUSES_HOTELS];
+
+      if (currentSelectedHotelCity !== 'all') {
+        list = list.filter(h => h.city.toLowerCase() === currentSelectedHotelCity.toLowerCase());
+      }
+
+      if (currentSelectedHotelCategory === '5star') {
+        list = list.filter(h => h.category === '5star');
+      } else if (currentSelectedHotelCategory === 'budget') {
+        list = list.filter(h => h.price <= 2500);
+      } else if (currentSelectedHotelCategory === 'station') {
+        list = list.filter(h => h.nearStation);
+      } else if (currentSelectedHotelCategory === 'pool') {
+        list = list.filter(h => h.hasPool);
+      }
+
+      if (sortCriteria === 'rating-desc') {
+        list.sort((a, b) => floatVal(b.rating) - floatVal(a.rating));
+      } else if (sortCriteria === 'price-asc') {
+        list.sort((a, b) => a.price - b.price);
+      } else if (sortCriteria === 'price-desc') {
+        list.sort((a, b) => b.price - a.price);
+      }
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="card" style="text-align:center; padding:40px; color:var(--muted);">
+            <div style="font-size:40px; margin-bottom:10px;">🏨</div>
+            <h4>No hotels found matching your selected criteria.</h4>
+            <p style="font-size:13px; margin-top:4px;">Try selecting "All Cities" or clearing your category filters.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map(h => `
+        <div class="hotel-card">
+          <div class="hotel-img-placeholder">
+            <div style="font-size:36px;">${h.bgIcon}</div>
+            <div>${h.city} Premium</div>
+          </div>
+
+          <div class="hotel-info-body">
+            <div>
+              <div class="hotel-name">
+                <span>${h.name}</span>
+                <span class="star-rating">⭐ ${h.rating}</span>
+                <span style="font-size:11px; color:var(--muted); font-weight:500;">(${h.reviews} reviews)</span>
+              </div>
+              <div class="hotel-location">📍 ${h.address}</div>
+            </div>
+
+            <div class="hotel-amenities">
+              ${h.amenities.map(a => `<span class="hotel-amenity-chip">${a}</span>`).join('')}
+            </div>
+          </div>
+
+          <div class="hotel-price-action">
+            <div>
+              <span class="hotel-discount-badge">${h.discount}</span>
+              <div style="text-decoration:line-through; font-size:12px; color:var(--muted);">₹${h.origPrice.toLocaleString()}</div>
+              <div class="hotel-price-tag">₹${h.price.toLocaleString()}</div>
+              <div class="hotel-price-sub">per room / night</div>
+            </div>
+
+            <button type="button" class="btn small" style="margin-top:12px;" onclick="openHotelBookingModal('${h.id}')">
+              🏨 BOOK ROOM
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function floatVal(v) {
+      return parseFloat(v) || 0;
+    }
+
+    function openHotelBookingModal(hotelId) {
+      activeBookingHotel = PALBUSES_HOTELS.find(h => h.id === hotelId) || PALBUSES_HOTELS[0];
+
+      document.getElementById('modalHotelTitle').textContent = activeBookingHotel.name;
+      document.getElementById('modalHotelMeta').textContent = `${activeBookingHotel.city} | ${activeBookingHotel.address}`;
+
+      const inVal = document.getElementById('hotelCheckIn') ? document.getElementById('hotelCheckIn').value : getFormattedDate(0);
+      const outVal = document.getElementById('hotelCheckOut') ? document.getElementById('hotelCheckOut').value : getFormattedDate(1);
+
+      document.getElementById('modalDisplayCheckIn').textContent = inVal;
+      document.getElementById('modalDisplayCheckOut').textContent = outVal;
+
+      // Auto pre-fill user if logged in
+      const user = typeof getLoggedInUser === 'function' ? getLoggedInUser() : null;
+      if (user) {
+        if (document.getElementById('hotelGuestName')) document.getElementById('hotelGuestName').value = user.name || '';
+        if (document.getElementById('hotelGuestPhone')) document.getElementById('hotelGuestPhone').value = user.phone || '';
+        if (document.getElementById('hotelGuestEmail')) document.getElementById('hotelGuestEmail').value = user.email || '';
+      }
+
+      recalculateHotelTotal();
+
+      const modal = document.getElementById('hotelBookingModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeHotelBookingModal() {
+      const modal = document.getElementById('hotelBookingModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function recalculateHotelTotal() {
+      if (!activeBookingHotel) return;
+      const roomSelect = document.getElementById('modalRoomTypeSelect');
+      const extra = roomSelect ? parseInt(roomSelect.options[roomSelect.selectedIndex].getAttribute('data-price')) || 0 : 0;
+      const total = activeBookingHotel.price + extra;
+
+      document.getElementById('modalHotelTotalFare').textContent = `₹${total.toLocaleString()}`;
+    }
+
+    function confirmHotelBooking(e) {
+      if (e) e.preventDefault();
+      const name = document.getElementById('hotelGuestName').value.trim();
+      const phone = document.getElementById('hotelGuestPhone').value.trim();
+      const email = document.getElementById('hotelGuestEmail').value.trim();
+
+      if (!name || phone.length !== 10 || !email) {
+        showToast('Please fill all guest details correctly.', '⚠️');
+        return;
+      }
+
+      closeHotelBookingModal();
+
+      const hotelPNR = 'HTL_' + Math.floor(100000 + Math.random() * 900000);
+      alert(`🎉 Hotel Booking Confirmed!\n\nConfirmation PNR: ${hotelPNR}\nHotel: ${activeBookingHotel.name}\nGuest: ${name}\nPhone: +91 ${phone}\n\nConfirmation SMS & Hotel Voucher sent to ${email}!`);
+      showToast(`🏨 Hotel Reservation Confirmed! PNR: ${hotelPNR}`, '✅');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initHotelsEngine();
+    });
+
+
+    /* 100% PRODUCTION E-TICKET DOWNLOAD & SHARE HELPERS */
+    function downloadTicketFile(pnr) {
+      const booking = getBookings().find(b => b.id === pnr);
+      if (!booking) {
+        showToast('Ticket not found for download.', '⚠️');
+        return;
+      }
+
+      const bus = allBuses.find(b => b.id === booking.busId);
+      const nl = String.fromCharCode(10);
+      const passText = booking.passengers.map((p, i) => (i + 1) + '. ' + p.name + ' (' + p.gender + ', ' + p.age + ' yrs)').join(nl);
+
+      const lines = [
+        "=====================================================",
+        "          PALBUSES OFFICIAL E-TICKET VOUCHER         ",
+        "=====================================================",
+        "PNR Code       : " + booking.id,
+        "Status         : " + (booking.status ? booking.status.toUpperCase() : 'CONFIRMED'),
+        "Booking Date   : " + (booking.bookingDate || '2026-08-22'),
+        "",
+        "JOURNEY DETAILS",
+        "-----------------------------------------------------",
+        "Operator       : " + (bus ? bus.operator : 'PalBuses Express'),
+        "Route          : " + (bus ? bus.source + ' -> ' + bus.destination : 'Express Route'),
+        "Departure Time : " + (bus ? bus.departTime : 'N/A'),
+        "Arrival Time   : " + (bus ? bus.arriveTime : 'N/A'),
+        "Seats Booked   : " + booking.seats.join(', '),
+        "Total Fare     : ₹" + booking.totalFare,
+        "",
+        "PASSENGER(S)",
+        "-----------------------------------------------------",
+        passText,
+        "",
+        "CONTACT INFO",
+        "-----------------------------------------------------",
+        "Name           : " + booking.contactName,
+        "Phone          : +91 " + booking.contactPhone,
+        "Email          : " + booking.contactEmail,
+        "Boarding Point : " + (booking.boardingPoint || 'Origin'),
+        "Dropping Point : " + (booking.droppingPoint || 'Destination'),
+        "",
+        "=====================================================",
+        "Thank you for booking with PalBuses India!",
+        "24/7 Helpline: +91 98765 43210 | www.palbuses.in",
+        "====================================================="
+      ];
+
+      const text = lines.join(nl);
+      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = "PalBuses_Ticket_" + booking.id + ".txt";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      showToast("📥 e-Ticket " + booking.id + " downloaded successfully!", "✅");
+    }</script>
+
+  <!-- FLOATING SIDE QUICK ACCESS BAR -->
+  <div class="floating-side-bar">
+    <button class="floating-side-btn privacy-btn" onclick="openPrivacyModal()" title="User Privacy Policy">
+      <span class="icon">🛡️</span>
+      <span class="label">User Privacy</span>
+    </button>
+    <button class="floating-side-btn address-btn" onclick="openAddressModal()" title="Regional Office Addresses">
+      <span class="icon">🏢</span>
+      <span class="label">More Addresses</span>
+    </button>
+  </div>
+
+  <!-- FULL USER PRIVACY & DATA PROTECTION POLICY MODAL -->
+  <div id="privacyModal" class="hidden"
+    style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.65); backdrop-filter:blur(6px); z-index:3500; display:flex; align-items:center; justify-content:center; padding:20px;">
+    <div class="card"
+      style="max-width:720px; width:100%; max-height:85vh; overflow-y:auto; box-shadow:var(--shadow-lg); border-radius:20px; padding:28px; background:#ffffff;">
+      <div
+        style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:20px;">
+        <h3 style="display:flex; align-items:center; gap:10px; font-size:20px; color:var(--text);">
+          🛡️ PalBuses User Privacy & Data Protection Policy
+        </h3>
+        <button class="btn secondary small" onclick="closePrivacyModal()">✕ Close</button>
+      </div>
+
+      <div class="privacy-modal-body">
+        <div class="privacy-section-box">
+          <h4>🔒 1. Information Collection & Usage</h4>
+          <p>We collect essential booking metadata including Contact Name, Mobile Number, Email Address, and
+            Boarding/Dropping Preferences. This data is exclusively used to generate official e-Tickets, send SMS
+            departure alerts, process cancellations, and verify passenger identity during boarding.</p>
+        </div>
+
+        <div class="privacy-section-box">
+          <h4>🛡️ 2. Data Confidentiality & Zero Telemarketing Guarantee</h4>
+          <p>PalBuses enforces a strict <b>Zero Spam Policy</b>. We do NOT sell, rent, trade, or share your contact
+            number or email address with third-party telemarketers or advertising networks.</p>
+        </div>
+
+        <div class="privacy-section-box">
+          <h4>💳 3. Payment Security & Encryption Standards</h4>
+          <p>All online financial transactions are protected using PCI-DSS compliant gateways with 256-bit SSL
+            encryption. PalBuses servers never store your credit card numbers, CVVs, net banking credentials, or UPI
+            PINs.</p>
+        </div>
+
+        <div class="privacy-section-box">
+          <h4>🚌 4. Operator Manifest Sharing Protocol</h4>
+          <p>Passenger name, seat assignment, and mobile number are shared solely with the specific bus operator
+            assigned to your booking for passenger manifest verification and emergency trip coordination.</p>
+        </div>
+
+        <div class="privacy-section-box">
+          <h4>📜 5. User Data Rights (DPDP & GDPR Compliance)</h4>
+          <p>Under Digital Personal Data Protection standards, you retain full rights to inspect, update, download, or
+            request permanent deletion of your passenger data from our system records.</p>
+        </div>
+      </div>
+
+      <div
+        style="display:flex; gap:12px; margin-top:24px; border-top:1px solid var(--border); padding-top:16px; flex-wrap:wrap;">
+        <button class="btn" style="flex:1;" onclick="closePrivacyModal()">I Understand & Accept Privacy Policy</button>
+        <button class="btn secondary" onclick="closePrivacyModal(); openDataErasureModal();">🔒 Request Data
+          Erasure</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGIONAL OFFICE ADDRESSES DIRECTORY MODAL -->
+  <div id="addressModal" class="hidden"
+    style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.65); backdrop-filter:blur(6px); z-index:3500; display:flex; align-items:center; justify-content:center; padding:20px;">
+    <div class="card"
+      style="max-width:860px; width:100%; max-height:88vh; overflow-y:auto; box-shadow:var(--shadow-lg); border-radius:20px; padding:28px; background:#ffffff;">
+      <div
+        style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:16px;">
+        <div>
+          <h3 style="display:flex; align-items:center; gap:10px; font-size:20px; color:var(--text);">
+            🏢 PalBuses Station Addresses & Regional Hubs
+          </h3>
+          <p style="color:var(--muted); font-size:13px; margin-top:2px;">Complete directory of physical passenger
+            service desks, ticket counters & regional offices.</p>
+        </div>
+        <button class="btn secondary small" onclick="closeAddressModal()">✕ Close</button>
+      </div>
+
+      <input type="text" class="address-search-input" id="addressSearchInput"
+        placeholder="🔍 Search by city, station name, or landmark (e.g. Kanpur, Delhi, ISBT, Jaipur)..."
+        oninput="filterAddressModal(this.value)">
+
+      <div class="address-modal-grid" id="addressModalGrid"></div>
+
+      <div
+        style="display:flex; justify-content:flex-end; margin-top:20px; border-top:1px solid var(--border); padding-top:16px;">
+        <button class="btn secondary" onclick="closeAddressModal()">Close Directory</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATA ERASURE / OPT-OUT REQUEST MODAL -->
+  <div id="dataErasureModal" class="hidden"
+    style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.65); backdrop-filter:blur(6px); z-index:3600; display:flex; align-items:center; justify-content:center; padding:20px;">
+    <div class="card"
+      style="max-width:480px; width:100%; box-shadow:var(--shadow-lg); border-radius:20px; padding:24px; background:#ffffff;">
+      <div
+        style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px;">
+        <h3 style="display:flex; align-items:center; gap:8px; font-size:18px;">🔒 Data Erasure & Privacy Request</h3>
+        <button class="btn secondary small" onclick="closeDataErasureModal()">✕ Close</button>
+      </div>
+
+      <form onsubmit="submitDataErasureRequest(event)">
+        <p style="font-size:13px; color:var(--muted); line-height:1.5; margin-bottom:16px;">
+          Submit your registered details below to permanently purge your booking history and passenger profile from
+          PalBuses active servers.
+        </p>
+
+        <div class="input-group" style="margin-bottom:14px;">
+          <label>Registered Mobile Number (10 Digits)</label>
+          <input id="erasurePhone" placeholder="Enter Mobile Number" maxlength="10" required style="padding-left:12px;">
+        </div>
+
+        <div class="input-group" style="margin-bottom:16px;">
+          <label>Email Address (Optional)</label>
+          <input id="erasureEmail" type="email" placeholder="name@example.com" style="padding-left:12px;">
+        </div>
+
+        <div
+          style="background:#fef2f2; border:1px solid #fecaca; padding:12px; border-radius:8px; font-size:12px; color:#991b1b; margin-bottom:20px;">
+          ⚠️ <b>Notice:</b> Purging your data will anonymize past ticket records and remove saved booking preferences.
+        </div>
+
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+          <button type="button" class="btn secondary" onclick="closeDataErasureModal()">Cancel</button>
+          <button type="submit" class="btn danger">🔒 Confirm Data Erasure</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- AUTHENTICATION (LOGIN / SIGNUP / GOOGLE / OTP) MODAL -->
+  <div id="authModal" class="hidden"
+    style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.65); backdrop-filter:blur(6px); z-index:4000; display:flex; align-items:center; justify-content:center; padding:20px;">
+    <div class="card"
+      style="max-width:440px; width:100%; box-shadow:var(--shadow-lg); border-radius:20px; padding:24px; background:#ffffff; position:relative;">
+
+      <button class="btn secondary small" onclick="closeAuthModal()"
+        style="position:absolute; right:20px; top:20px; padding:4px 10px;">✕</button>
+
+      <!-- Welcome Banner for First Time Visitors -->
+      <div id="authFirstVisitBanner" class="welcome-first-badge hidden">
+        👋 <span>Welcome to PalBuses! Log in to claim <b>10% OFF</b> your first bus booking.</span>
+      </div>
+
+      <!-- Auth Header Tabs -->
+      <div class="auth-tab-bar">
+        <button class="auth-tab-btn active" id="authTabBtnLogin" onclick="switchAuthTab('login')">🔑 Log In</button>
+        <button class="auth-tab-btn" id="authTabBtnSignup" onclick="switchAuthTab('signup')">✨ Sign Up</button>
+      </div>
+
+      <!-- Method Selector Chips -->
+      <div class="auth-method-selector">
+        <div class="auth-method-chip active" id="authChipPassword" onclick="switchAuthMethod('password')">🔑 User ID &
+          Pass</div>
+        <div class="auth-method-chip" id="authChipOTP" onclick="switchAuthMethod('otp')">📱 Mobile OTP</div>
+        <div class="auth-method-chip" id="authChipGoogle" onclick="switchAuthMethod('google')">🌐 Google</div>
+      </div>
+
+      <!-- METHOD 1: USER ID & PASSWORD -->
+      <div id="authSecPassword">
+        <!-- LOGIN FORM -->
+        <form id="authFormLogin" onsubmit="handlePasswordLogin(event)">
+          <div class="input-group" style="margin-bottom:14px;">
+            <label>User ID / Email Address</label>
+            <input id="loginUserId" type="text" placeholder="Enter User ID or Email" required
+              style="padding-left:12px;">
+          </div>
+          <div class="input-group" style="margin-bottom:14px;">
+            <label>Password</label>
+            <div class="password-wrapper">
+              <input id="loginPassword" type="password" placeholder="Enter Password" required
+                style="padding-left:12px;">
+              <button type="button" class="toggle-pass-btn"
+                onclick="togglePasswordVisibility('loginPassword')">👁️</button>
+            </div>
+          </div>
+          <div
+            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; font-size:12px;">
+            <label style="display:flex; align-items:center; gap:6px; cursor:pointer;">
+              <input type="checkbox" checked> Remember me
+            </label>
+            <a href="#" style="color:var(--primary); text-decoration:none; font-weight:600;"
+              onclick="showToast('Password reset link sent to registered email.', '📧')">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn full-width" style="padding:12px;">🔑 Log In to PalBuses</button>
+        </form>
+
+        <!-- SIGNUP FORM -->
+        <form id="authFormSignup" class="hidden" onsubmit="handlePasswordSignup(event)">
+          <div class="input-group" style="margin-bottom:12px;">
+            <label>Full Name</label>
+            <input id="signupName" type="text" placeholder="Enter Full Name" required style="padding-left:12px;">
+          </div>
+          <div class="input-group" style="margin-bottom:12px;">
+            <label>Email Address / User ID</label>
+            <input id="signupEmail" type="email" placeholder="name@example.com" required style="padding-left:12px;">
+          </div>
+          <div class="input-group" style="margin-bottom:12px;">
+            <label>Mobile Number (10 digits)</label>
+            <input id="signupPhone" type="tel" placeholder="Mobile Number" maxlength="10" required
+              style="padding-left:12px;">
+          </div>
+          <div class="input-group" style="margin-bottom:16px;">
+            <label>Create Password</label>
+            <div class="password-wrapper">
+              <input id="signupPassword" type="password" placeholder="Min. 6 characters" minlength="6" required
+                style="padding-left:12px;">
+              <button type="button" class="toggle-pass-btn"
+                onclick="togglePasswordVisibility('signupPassword')">👁️</button>
+            </div>
+          </div>
+          <button type="submit" class="btn full-width" style="padding:12px;">✨ Create PalBuses Account</button>
+        </form>
+      </div>
+
+      <!-- METHOD 2: MOBILE NUMBER OTP -->
+      <div id="authSecOTP" class="hidden">
+        <div id="otpStep1">
+          <div class="input-group" style="margin-bottom:16px;">
+            <label>10-Digit Mobile Number</label>
+            <input id="otpPhone" type="tel" placeholder="Enter 10-digit Mobile Number" maxlength="10"
+              style="padding-left:12px;">
+          </div>
+          <button type="button" class="btn full-width" onclick="sendMobileOTP()" style="padding:12px;">📲 Send OTP
+            SMS</button>
+        </div>
+
+        <div id="otpStep2" class="hidden">
+          <p style="font-size:13px; text-align:center; color:var(--muted); margin-bottom:8px;">
+            Enter 4-digit verification code sent to <b id="otpSentPhoneDisplay"></b>
+          </p>
+          <div class="otp-inputs">
+            <input type="text" class="otp-field" maxlength="1" oninput="focusNextOTP(this, 1)" id="otp1">
+            <input type="text" class="otp-field" maxlength="1" oninput="focusNextOTP(this, 2)" id="otp2">
+            <input type="text" class="otp-field" maxlength="1" oninput="focusNextOTP(this, 3)" id="otp3">
+            <input type="text" class="otp-field" maxlength="1" oninput="focusNextOTP(this, 4)" id="otp4">
+          </div>
+          <div style="text-align:center; font-size:12px; color:var(--muted); margin-bottom:16px;">📲 Enter the 4-digit
+            code sent to your mobile via SMS</div>
+          <button type="button" class="btn full-width" onclick="verifyMobileOTP()" style="padding:12px;">✅ Verify OTP &
+            Log In</button>
+        </div>
+      </div>
+
+      <!-- METHOD 3: GOOGLE ACCOUNT -->
+      <div id="authSecGoogle" class="hidden">
+        <p style="font-size:13px; color:var(--muted); text-align:center; margin-bottom:14px;">
+          Fast, passwordless authentication using your <b>Google Account</b>.
+        </p>
+
+        <form onsubmit="performDirectGoogleSignIn(event)">
+          <div class="input-group" style="margin-bottom:12px;">
+            <label>Google Email Address</label>
+            <input id="googleDirectEmail" type="email" placeholder="e.g. yourname@gmail.com" style="padding-left:12px;">
+          </div>
+
+          <div class="input-group" style="margin-bottom:16px;">
+            <label>Full Name (Optional)</label>
+            <input id="googleDirectName" type="text" placeholder="e.g. Sumit Kumar" style="padding-left:12px;">
+          </div>
+
+          <button type="submit" class="btn-google" style="margin-bottom:12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path fill="#4285F4"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+              <path fill="#34A853"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+              <path fill="#FBBC05"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+              <path fill="#EA4335"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+            </svg>
+            Sign in with Google
+          </button>
+        </form>
+
+        <div style="text-align:center;">
+          <button type="button" class="btn ghost small" style="font-size:12px; color:var(--primary);"
+            onclick="triggerGoogleSignIn()">
+            🌐 Choose Saved Google Account...
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOOGLE MOCK OAUTH SELECTION MODAL -->
+    <!-- GOOGLE OAUTH REAL ACCOUNT MODAL -->
+    <!-- GOOGLE OAUTH REAL ACCOUNT MODAL -->
+    <div id="googleOAuthModal" class="hidden"
+      style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.7); backdrop-filter:blur(8px); z-index:4500; display:flex; align-items:center; justify-content:center; padding:20px;">
+      <div class="card"
+        style="max-width:420px; width:100%; border-radius:16px; padding:24px; background:#ffffff; box-shadow:var(--shadow-lg); position:relative;">
+        <button type="button" class="btn secondary small" onclick="closeGoogleOAuthModal()"
+          style="position:absolute; right:16px; top:16px; padding:4px 8px;">✕</button>
+
+        <div style="text-align:center; margin-bottom:16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" style="margin-bottom:8px;">
+            <path fill="#4285F4"
+              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+            <path fill="#34A853"
+              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+            <path fill="#FBBC05"
+              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+            <path fill="#EA4335"
+              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+          </svg>
+          <h4 style="font-size:16px; color:var(--text);">Sign in with Google</h4>
+          <p style="font-size:12px; color:var(--muted);">Select or enter your Google Account to continue to
+            <b>PalBuses</b>
+          </p>
+        </div>
+
+        <!-- Saved Accounts List -->
+        <div id="googleAccountsList"
+          style="display:flex; flex-direction:column; gap:8px; margin-bottom:14px; max-height:200px; overflow-y:auto;">
+          <!-- Hydrated dynamically -->
+        </div>
+
+        <!-- New Account Input Form -->
+        <div id="googleNewAccountSec"
+          style="background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:14px; margin-bottom:14px;">
+          <h5 style="font-size:13px; font-weight:700; margin-bottom:8px;">Enter Google Email</h5>
+          <div class="input-group" style="margin-bottom:10px;">
+            <input id="googleRealEmail" type="email" placeholder="your.name@gmail.com"
+              style="padding-left:10px; font-size:13px;">
+          </div>
+          <div class="input-group" style="margin-bottom:12px;">
+            <input id="googleRealName" type="text" placeholder="Your Name (Optional)"
+              style="padding-left:10px; font-size:13px;">
+          </div>
+          <button type="button" class="btn full-width small" onclick="saveAndLoginRealGoogleAccount()">🌐 Sign In with
+            Google</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <button type="button" class="btn secondary small" onclick="closeGoogleOAuthModal()">Cancel</button>
+          <span style="font-size:11px; color:var(--muted);">🔒 Google Identity Services</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div
+    style="display:flex; align-items:center; gap:12px; padding:10px; border:1px solid var(--border); border-radius:10px; cursor:pointer; background:#ffffff;"
+    onclick="confirmGoogleAccount('Demo Passenger', 'passenger@gmail.com', '9123456789')">
+    <div
+      style="width:36px; height:36px; border-radius:50%; background:#4285f4; color:white; display:flex; align-items:center; justify-content:center; font-weight:700;">
+      DP</div>
+    <div>
+      <div style="font-size:13px; font-weight:700; color:var(--text);">Demo Passenger</div>
+      <div style="font-size:12px; color:var(--muted);">passenger@gmail.com</div>
+    </div>
+  </div>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <button class="btn secondary small" onclick="closeGoogleOAuthModal()">Cancel</button>
+    <span style="font-size:11px; color:var(--muted);">🔒 Google Identity Services</span>
+  </div>
+  </div>
+  </div>
+
+
+  <!-- HOTEL ROOM RESERVATION MODAL -->
+  <div id="hotelBookingModal" class="hidden"
+    style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.65); backdrop-filter:blur(6px); z-index:3600; display:flex; align-items:center; justify-content:center; padding:20px;">
+    <div class="card"
+      style="max-width:560px; width:100%; max-height:88vh; overflow-y:auto; box-shadow:var(--shadow-lg); border-radius:20px; padding:28px; background:#ffffff; position:relative;">
+      <button type="button" class="btn secondary small" onclick="closeHotelBookingModal()"
+        style="position:absolute; right:20px; top:20px; padding:4px 10px;">✕</button>
+
+      <div style="border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:18px;">
+        <span class="trust-badge"
+          style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe; margin-bottom:6px;">INSTANT
+          CONFIRMATION</span>
+        <h3 id="modalHotelTitle" style="font-size:20px; color:var(--text);">Hotel Room Booking</h3>
+        <p style="color:var(--muted); font-size:13px;" id="modalHotelMeta">Delhi NCR | ⭐ 5-Star Luxury</p>
+      </div>
+
+      <form onsubmit="confirmHotelBooking(event)">
+        <div
+          style="background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:14px; margin-bottom:18px;">
+          <div class="input-group" style="margin-bottom:10px;">
+            <label>Select Room Category</label>
+            <select id="modalRoomTypeSelect" onchange="recalculateHotelTotal()">
+              <option value="standard" data-price="0">Deluxe Executive Room (Included)</option>
+              <option value="suite" data-price="1200">Royal Luxury Suite (+₹1,200/night)</option>
+              <option value="presidential" data-price="2500">Presidential Family Suite (+₹2,500/night)</option>
+            </select>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:13px; color:var(--text);">
+            <div>📅 <b>Check-in:</b> <span id="modalDisplayCheckIn">2026-08-22</span></div>
+            <div>📅 <b>Check-out:</b> <span id="modalDisplayCheckOut">2026-08-23</span></div>
+          </div>
+        </div>
+
+        <h4 style="font-size:14px; margin-bottom:12px;">Guest Contact Information</h4>
+
+        <div class="input-group" style="margin-bottom:12px;">
+          <label>Primary Guest Name</label>
+          <input id="hotelGuestName" placeholder="Full Name" required style="padding-left:12px;">
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px;">
+          <div class="input-group">
+            <label>Mobile Number (10 digits)</label>
+            <input id="hotelGuestPhone" placeholder="Mobile Number" maxlength="10" required style="padding-left:12px;">
+          </div>
+          <div class="input-group">
+            <label>Email Address</label>
+            <input id="hotelGuestEmail" type="email" placeholder="name@example.com" required style="padding-left:12px;">
+          </div>
+        </div>
+
+        <div
+          style="background:#f0fdf4; border:1px solid #bbf7d0; padding:14px; border-radius:12px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-size:12px; color:#166534; font-weight:700;">TOTAL PAYABLE AMOUNT</div>
+            <div style="font-size:11px; color:#15803d;">Includes Taxes & Free Cancellation</div>
+          </div>
+          <div style="font-size:22px; font-weight:800; color:#15803d;" id="modalHotelTotalFare">₹0</div>
+        </div>
+
+        <div style="display:flex; gap:12px;">
+          <button type="button" class="btn secondary" style="flex:1;" onclick="closeHotelBookingModal()">Cancel</button>
+          <button type="submit" class="btn" style="flex:2;">🔒 Pay & Confirm Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
 </body>
 
 </html>
